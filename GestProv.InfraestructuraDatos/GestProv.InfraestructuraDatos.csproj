@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{37F582AF-2B33-42C5-9C1F-7335348130CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GestProv.InfraestructuraDatos</RootNamespace>
+    <AssemblyName>GestProv.InfraestructuraDatos</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="01-BASE DE DATOS\GestProvContexto.cs" />
+    <Compile Include="Migrations\202211280204124_NuevaEntidadProveedor.cs" />
+    <Compile Include="Migrations\202211280204124_NuevaEntidadProveedor.designer.cs">
+      <DependentUpon>202211280204124_NuevaEntidadProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212021835270_nuevo campo.cs" />
+    <Compile Include="Migrations\202212021835270_nuevo campo.designer.cs">
+      <DependentUpon>202212021835270_nuevo campo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212022047583_tabla tecnicos.cs" />
+    <Compile Include="Migrations\202212022047583_tabla tecnicos.designer.cs">
+      <DependentUpon>202212022047583_tabla tecnicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212022049050_tabla tecnicos2.cs" />
+    <Compile Include="Migrations\202212022049050_tabla tecnicos2.designer.cs">
+      <DependentUpon>202212022049050_tabla tecnicos2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212031315476_prueba entidades nuevas.cs" />
+    <Compile Include="Migrations\202212031315476_prueba entidades nuevas.designer.cs">
+      <DependentUpon>202212031315476_prueba entidades nuevas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212031317479_prueba entidades nuevas2.cs" />
+    <Compile Include="Migrations\202212031317479_prueba entidades nuevas2.designer.cs">
+      <DependentUpon>202212031317479_prueba entidades nuevas2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212031327559_entidades nuevas.cs" />
+    <Compile Include="Migrations\202212031327559_entidades nuevas.designer.cs">
+      <DependentUpon>202212031327559_entidades nuevas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212031334484_entidades nuevas2.cs" />
+    <Compile Include="Migrations\202212031334484_entidades nuevas2.designer.cs">
+      <DependentUpon>202212031334484_entidades nuevas2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212031413088_ultimas entidades.cs" />
+    <Compile Include="Migrations\202212031413088_ultimas entidades.designer.cs">
+      <DependentUpon>202212031413088_ultimas entidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212031537235_MODIFICO TAMAÑO RAZON SOCIAL.cs" />
+    <Compile Include="Migrations\202212031537235_MODIFICO TAMAÑO RAZON SOCIAL.designer.cs">
+      <DependentUpon>202212031537235_MODIFICO TAMAÑO RAZON SOCIAL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestProv.Dominio\GestProv.Dominio.csproj">
+      <Project>{90B2D244-E50A-48B0-8BD3-DB8AC4431257}</Project>
+      <Name>GestProv.Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202211280204124_NuevaEntidadProveedor.resx">
+      <DependentUpon>202211280204124_NuevaEntidadProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212021835270_nuevo campo.resx">
+      <DependentUpon>202212021835270_nuevo campo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212022047583_tabla tecnicos.resx">
+      <DependentUpon>202212022047583_tabla tecnicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212022049050_tabla tecnicos2.resx">
+      <DependentUpon>202212022049050_tabla tecnicos2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212031315476_prueba entidades nuevas.resx">
+      <DependentUpon>202212031315476_prueba entidades nuevas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212031317479_prueba entidades nuevas2.resx">
+      <DependentUpon>202212031317479_prueba entidades nuevas2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212031327559_entidades nuevas.resx">
+      <DependentUpon>202212031327559_entidades nuevas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212031334484_entidades nuevas2.resx">
+      <DependentUpon>202212031334484_entidades nuevas2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212031413088_ultimas entidades.resx">
+      <DependentUpon>202212031413088_ultimas entidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212031537235_MODIFICO TAMAÑO RAZON SOCIAL.resx">
+      <DependentUpon>202212031537235_MODIFICO TAMAÑO RAZON SOCIAL.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
