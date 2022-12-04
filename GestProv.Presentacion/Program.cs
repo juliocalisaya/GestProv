@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestProv.Presentacion._01_VISTAS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace GestProv.Presentacion
            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PrincipalVista());
+            Application.Run(new VistaPrincipal());
         }
 
     }

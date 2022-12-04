@@ -15,6 +15,7 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -45,7 +46,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -62,6 +65,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="01-VISTAS\CalificacionesVista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01-VISTAS\CalificacionesVista.Designer.cs">
+      <DependentUpon>CalificacionesVista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="01-VISTAS\EquipamientosVista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01-VISTAS\EquipamientosVista.Designer.cs">
+      <DependentUpon>EquipamientosVista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="01-VISTAS\EstadisticasVista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01-VISTAS\EstadisticasVista.Designer.cs">
+      <DependentUpon>EstadisticasVista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="01-VISTAS\HistorialVista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01-VISTAS\HistorialVista.Designer.cs">
+      <DependentUpon>HistorialVista.cs</DependentUpon>
+    </Compile>
     <Compile Include="01-VISTAS\ListadoComprasVista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +137,12 @@
     <Compile Include="01-VISTAS\TecnicoVista.Designer.cs">
       <DependentUpon>TecnicoVista.cs</DependentUpon>
     </Compile>
+    <Compile Include="01-VISTAS\VistaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01-VISTAS\VistaPrincipal.Designer.cs">
+      <DependentUpon>VistaPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="02-PRESENTADORES\ListadoProveedoresPresentador.cs" />
     <Compile Include="02-PRESENTADORES\ListadoTecnicosPresentador.cs" />
     <Compile Include="02-PRESENTADORES\PrincipalPresentador.cs" />
@@ -119,6 +152,18 @@
     <Compile Include="03-INTERFACES\IPrincipalVista.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="01-VISTAS\CalificacionesVista.resx">
+      <DependentUpon>CalificacionesVista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01-VISTAS\EquipamientosVista.resx">
+      <DependentUpon>EquipamientosVista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01-VISTAS\EstadisticasVista.resx">
+      <DependentUpon>EstadisticasVista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01-VISTAS\HistorialVista.resx">
+      <DependentUpon>HistorialVista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="01-VISTAS\ListadoComprasVista.resx">
       <DependentUpon>ListadoComprasVista.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +188,9 @@
     <EmbeddedResource Include="01-VISTAS\TecnicoVista.resx">
       <DependentUpon>TecnicoVista.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="01-VISTAS\VistaPrincipal.resx">
+      <DependentUpon>VistaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -151,6 +199,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\GestProv.Dominio._01_ENTIDADES.Ciudad.datasource" />
@@ -179,6 +228,9 @@
       <Project>{37F582AF-2B33-42C5-9C1F-7335348130CE}</Project>
       <Name>GestProv.InfraestructuraDatos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

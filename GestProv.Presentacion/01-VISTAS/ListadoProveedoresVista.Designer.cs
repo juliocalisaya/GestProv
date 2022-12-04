@@ -48,9 +48,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.label1.Location = new System.Drawing.Point(252, 25);
+            this.label1.Location = new System.Drawing.Point(336, 31);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 37);
+            this.label1.Size = new System.Drawing.Size(331, 46);
             this.label1.TabIndex = 1;
             this.label1.Text = "PROVEEDORES";
             // 
@@ -67,18 +68,21 @@
             this.cUITDataGridViewTextBoxColumn,
             this.estadoDataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.proveedorBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 76);
+            this.dataGridView1.Location = new System.Drawing.Point(36, 94);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(729, 226);
+            this.dataGridView1.Size = new System.Drawing.Size(972, 278);
             this.dataGridView1.TabIndex = 2;
             // 
             // nombreyApellidoDataGridViewTextBoxColumn
             // 
             this.nombreyApellidoDataGridViewTextBoxColumn.DataPropertyName = "NombreyApellido";
             this.nombreyApellidoDataGridViewTextBoxColumn.HeaderText = "NombreyApellido";
+            this.nombreyApellidoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nombreyApellidoDataGridViewTextBoxColumn.Name = "nombreyApellidoDataGridViewTextBoxColumn";
             this.nombreyApellidoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -86,6 +90,7 @@
             // 
             this.razonSocialDataGridViewTextBoxColumn.DataPropertyName = "RazonSocial";
             this.razonSocialDataGridViewTextBoxColumn.HeaderText = "RazonSocial";
+            this.razonSocialDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.razonSocialDataGridViewTextBoxColumn.Name = "razonSocialDataGridViewTextBoxColumn";
             this.razonSocialDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -93,6 +98,7 @@
             // 
             this.cUITDataGridViewTextBoxColumn.DataPropertyName = "CUIT";
             this.cUITDataGridViewTextBoxColumn.HeaderText = "CUIT";
+            this.cUITDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cUITDataGridViewTextBoxColumn.Name = "cUITDataGridViewTextBoxColumn";
             this.cUITDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -100,6 +106,7 @@
             // 
             this.estadoDataGridViewCheckBoxColumn.DataPropertyName = "Estado";
             this.estadoDataGridViewCheckBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
             this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
@@ -109,9 +116,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(300, 343);
+            this.button1.Location = new System.Drawing.Point(400, 422);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 55);
+            this.button1.Size = new System.Drawing.Size(133, 68);
             this.button1.TabIndex = 3;
             this.button1.Text = "Nuevo Proveedor";
             this.button1.UseVisualStyleBackColor = true;
@@ -119,9 +127,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(447, 343);
+            this.button2.Location = new System.Drawing.Point(596, 422);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 55);
+            this.button2.Size = new System.Drawing.Size(163, 68);
             this.button2.TabIndex = 4;
             this.button2.Text = "Eliminar Proveedor";
             this.button2.UseVisualStyleBackColor = true;
@@ -129,9 +138,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(634, 343);
+            this.button3.Location = new System.Drawing.Point(845, 422);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(122, 55);
+            this.button3.Size = new System.Drawing.Size(163, 68);
             this.button3.TabIndex = 5;
             this.button3.Text = "Editar Proveedor";
             this.button3.UseVisualStyleBackColor = true;
@@ -139,9 +149,10 @@
             // 
             // buttonSucursales
             // 
-            this.buttonSucursales.Location = new System.Drawing.Point(27, 343);
+            this.buttonSucursales.Location = new System.Drawing.Point(36, 422);
+            this.buttonSucursales.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSucursales.Name = "buttonSucursales";
-            this.buttonSucursales.Size = new System.Drawing.Size(100, 55);
+            this.buttonSucursales.Size = new System.Drawing.Size(133, 68);
             this.buttonSucursales.TabIndex = 6;
             this.buttonSucursales.Text = "Ver Sucursales";
             this.buttonSucursales.UseVisualStyleBackColor = true;
@@ -149,18 +160,21 @@
             // 
             // ListadoProveedoresVista
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1042, 673);
             this.Controls.Add(this.buttonSucursales);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1042, 673);
             this.Name = "ListadoProveedoresVista";
             this.Text = "ListadoProveedoresVista";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ListadoProveedoresVista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
