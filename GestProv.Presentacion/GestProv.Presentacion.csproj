@@ -71,6 +71,12 @@
     <Compile Include="01-VISTAS\CalificacionesVista.Designer.cs">
       <DependentUpon>CalificacionesVista.cs</DependentUpon>
     </Compile>
+    <Compile Include="01-VISTAS\CompraVista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01-VISTAS\CompraVista.Designer.cs">
+      <DependentUpon>CompraVista.cs</DependentUpon>
+    </Compile>
     <Compile Include="01-VISTAS\EquipamientosVista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,7 @@
     <Compile Include="01-VISTAS\VistaPrincipal.Designer.cs">
       <DependentUpon>VistaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="02-PRESENTADORES\CompraPresentador.cs" />
     <Compile Include="02-PRESENTADORES\ListadoOrdenesServicioPresentador.cs" />
     <Compile Include="02-PRESENTADORES\ListadoProveedoresPresentador.cs" />
     <Compile Include="02-PRESENTADORES\ListadoTecnicosPresentador.cs" />
@@ -169,6 +176,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="01-VISTAS\CalificacionesVista.resx">
       <DependentUpon>CalificacionesVista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01-VISTAS\CompraVista.resx">
+      <DependentUpon>CompraVista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="01-VISTAS\EquipamientosVista.resx">
       <DependentUpon>EquipamientosVista.cs</DependentUpon>
@@ -223,7 +233,10 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\GestProv.Dominio._01_ENTIDADES.Categoria.datasource" />
     <None Include="Properties\DataSources\GestProv.Dominio._01_ENTIDADES.Ciudad.datasource" />
+    <None Include="Properties\DataSources\GestProv.Dominio._01_ENTIDADES.Compra.datasource" />
+    <None Include="Properties\DataSources\GestProv.Dominio._01_ENTIDADES.Equipamiento.datasource" />
     <None Include="Properties\DataSources\GestProv.Dominio._01_ENTIDADES.OrdenDeServicio.datasource" />
     <None Include="Properties\DataSources\GestProv.Dominio._01_ENTIDADES.Pais.datasource" />
     <None Include="Properties\DataSources\GestProv.Dominio._01_ENTIDADES.Proveedor.datasource" />
