@@ -45,7 +45,7 @@ namespace GestProv.Presentacion._02_PRESENTADORES
 
         public void VerSucursales(Proveedor proveedor)
         {
-            SucursalesVista sucursalesVista = new SucursalesVista(proveedor, _contexto);
+            ListadoSucursalesVista sucursalesVista = new ListadoSucursalesVista(proveedor, _contexto);
             sucursalesVista.ShowDialog();
         }
     }

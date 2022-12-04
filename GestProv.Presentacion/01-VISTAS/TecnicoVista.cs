@@ -92,7 +92,7 @@ namespace GestProv.Presentacion._01_VISTAS
         private void Guardar()
         {
             _presentador.GuardarTecnico();
-            MessageBox.Show("PROVEEDOR GUARDADO CORRECTAMENTE", "GUARDADO CORRECTO", MessageBoxButtons.OK);
+            MessageBox.Show("TECNICO GUARDADO CORRECTAMENTE", "GUARDADO CORRECTO", MessageBoxButtons.OK);
             this.Close();
         }
 

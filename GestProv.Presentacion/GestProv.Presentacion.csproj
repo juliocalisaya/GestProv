@@ -113,6 +113,12 @@
     <Compile Include="01-VISTAS\ListadoTecnicosVista.Designer.cs">
       <DependentUpon>ListadoTecnicosVista.cs</DependentUpon>
     </Compile>
+    <Compile Include="01-VISTAS\OrdenDeServicioVista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01-VISTAS\OrdenDeServicioVista.Designer.cs">
+      <DependentUpon>OrdenDeServicioVista.cs</DependentUpon>
+    </Compile>
     <Compile Include="01-VISTAS\PrincipalVista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,11 +131,17 @@
     <Compile Include="01-VISTAS\ProveedorVista.Designer.cs">
       <DependentUpon>ProveedorVista.cs</DependentUpon>
     </Compile>
-    <Compile Include="01-VISTAS\SucursalesVista.cs">
+    <Compile Include="01-VISTAS\ListadoSucursalesVista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="01-VISTAS\SucursalesVista.Designer.cs">
-      <DependentUpon>SucursalesVista.cs</DependentUpon>
+    <Compile Include="01-VISTAS\ListadoSucursalesVista.Designer.cs">
+      <DependentUpon>ListadoSucursalesVista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="01-VISTAS\SucursalVista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01-VISTAS\SucursalVista.Designer.cs">
+      <DependentUpon>SucursalVista.cs</DependentUpon>
     </Compile>
     <Compile Include="01-VISTAS\TecnicoVista.cs">
       <SubType>Form</SubType>
@@ -143,10 +155,13 @@
     <Compile Include="01-VISTAS\VistaPrincipal.Designer.cs">
       <DependentUpon>VistaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="02-PRESENTADORES\ListadoOrdenesServicioPresentador.cs" />
     <Compile Include="02-PRESENTADORES\ListadoProveedoresPresentador.cs" />
     <Compile Include="02-PRESENTADORES\ListadoTecnicosPresentador.cs" />
+    <Compile Include="02-PRESENTADORES\OrdenDeServicioPresentador.cs" />
     <Compile Include="02-PRESENTADORES\PrincipalPresentador.cs" />
     <Compile Include="02-PRESENTADORES\ProveedorPresentador.cs" />
+    <Compile Include="02-PRESENTADORES\ListadoSucursalesPresentador.cs" />
     <Compile Include="02-PRESENTADORES\SucursalPresentador.cs" />
     <Compile Include="02-PRESENTADORES\TecnicoPresentador.cs" />
     <Compile Include="03-INTERFACES\IPrincipalVista.cs" />
@@ -176,14 +191,20 @@
     <EmbeddedResource Include="01-VISTAS\ListadoTecnicosVista.resx">
       <DependentUpon>ListadoTecnicosVista.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="01-VISTAS\OrdenDeServicioVista.resx">
+      <DependentUpon>OrdenDeServicioVista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="01-VISTAS\PrincipalVista.resx">
       <DependentUpon>PrincipalVista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="01-VISTAS\ProveedorVista.resx">
       <DependentUpon>ProveedorVista.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="01-VISTAS\SucursalesVista.resx">
-      <DependentUpon>SucursalesVista.cs</DependentUpon>
+    <EmbeddedResource Include="01-VISTAS\ListadoSucursalesVista.resx">
+      <DependentUpon>ListadoSucursalesVista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01-VISTAS\SucursalVista.resx">
+      <DependentUpon>SucursalVista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="01-VISTAS\TecnicoVista.resx">
       <DependentUpon>TecnicoVista.cs</DependentUpon>
@@ -203,7 +224,10 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\GestProv.Dominio._01_ENTIDADES.Ciudad.datasource" />
+    <None Include="Properties\DataSources\GestProv.Dominio._01_ENTIDADES.OrdenDeServicio.datasource" />
+    <None Include="Properties\DataSources\GestProv.Dominio._01_ENTIDADES.Pais.datasource" />
     <None Include="Properties\DataSources\GestProv.Dominio._01_ENTIDADES.Proveedor.datasource" />
+    <None Include="Properties\DataSources\GestProv.Dominio._01_ENTIDADES.Provincia.datasource" />
     <None Include="Properties\DataSources\GestProv.Dominio._01_ENTIDADES.Sucursal.datasource" />
     <None Include="Properties\DataSources\GestProv.Dominio._01_ENTIDADES.Tecnico.datasource" />
     <None Include="Properties\Settings.settings">

@@ -261,21 +261,21 @@ namespace GestProv.InfraestructuraDatos._01_BASE_DE_DATOS
 
         public List<Pais> ObtenerPaises()
         {
-            return Paises.ToList();
+            return Paises.OrderBy(x => x.Nombre).ToList();
         }
 
         //TABLA PROVINCIAS------------------------------------------------------
 
-        public List<Provincia> ObtenerProvincias()
+        public List<Provincia> ObtenerProvincias(Pais pais)
         {
-            return Provincias.ToList();
+            return Provincias.Where(c => c.Pais.Id.Equals(pais.Id)).OrderBy(x => x.Nombre).ToList();
         }
 
         //TABLA CIUDADES------------------------------------------------------
 
-        public List<Ciudad> ObtenerCiudades()
+        public List<Ciudad> ObtenerCiudades(Provincia provincia)
         {
-            return Ciudades.ToList();
+            return Ciudades.Where(x => x.Provincia.Id.Equals(provincia.Id)).OrderBy(x => x.Nombre).ToList();
         }
 
         //TABLA SUCURSALES------------------------------------------------------
@@ -284,7 +284,15 @@ namespace GestProv.InfraestructuraDatos._01_BASE_DE_DATOS
         {
             return Sucursales.Where(c => c.Proveedor.Id.Equals(proveedor.Id)).ToList();
         }
-
+        public void AltaSucursal(Sucursal sucursal)
+        {
+            Sucursales.Add(sucursal);
+        }
+        public void BajaSucursal(Sucursal sucursal)
+        {
+            Sucursales.Remove(sucursal);
+            GuardarCambios();
+        }
         //TABLA CATEGORIAS------------------------------------------------------
 
         public List<Categoria> ObtenerCategorias()
@@ -312,6 +320,11 @@ namespace GestProv.InfraestructuraDatos._01_BASE_DE_DATOS
         public void AltaOrdenDeServicio(OrdenDeServicio orden)
         {
             OrdenesDeServicio.Add(orden);
+        }
+        public void BajaOrdenDeServicio(OrdenDeServicio orden)
+        {
+            OrdenesDeServicio.Remove(orden);
+            GuardarCambios();
         }
 
         //TABLA EQUIPAMIENTO------------------------------------------------------
