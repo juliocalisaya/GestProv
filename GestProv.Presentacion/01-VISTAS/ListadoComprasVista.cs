@@ -27,7 +27,7 @@ namespace GestProv.Presentacion._01_VISTAS
 
         private void eliminarCompraBTN_Click(object sender, EventArgs e)
         {
-            _presentador.EliminarComrpa();
+            _presentador.EliminarCompra();
         }
 
         private void editarCompraBTN_Click(object sender, EventArgs e)

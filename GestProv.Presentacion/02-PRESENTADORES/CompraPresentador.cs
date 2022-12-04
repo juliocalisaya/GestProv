@@ -24,7 +24,7 @@ namespace GestProv.Presentacion._02_PRESENTADORES
         }
 
 
-        public void EditarComrpa()
+        public void EditarCompra()
         {
 
         }
