@@ -49,16 +49,20 @@ namespace GestProv.Presentacion._01_VISTAS
             this.fechaEsperadaEntregaTB = new System.Windows.Forms.TextBox();
             this.fechaRealEntregaTB = new System.Windows.Forms.TextBox();
             this.comprasList = new System.Windows.Forms.DataGridView();
-            this.equipamientoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diasGarantiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.compraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipamientoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.comprasList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.equipamientoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.equipamientoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // limpiarBTN
@@ -92,6 +96,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.guardarBTN.TabIndex = 10;
             this.guardarBTN.Text = "Guardar";
             this.guardarBTN.UseVisualStyleBackColor = true;
+            this.guardarBTN.Click += new System.EventHandler(this.guardarBTN_Click);
             // 
             // label1
             // 
@@ -115,15 +120,20 @@ namespace GestProv.Presentacion._01_VISTAS
             // 
             // proveedorCB
             // 
+            this.proveedorCB.DataSource = this.proveedoresBindingSource;
+            this.proveedorCB.DisplayMember = "NombreyApellido";
             this.proveedorCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.proveedorCB.FormattingEnabled = true;
             this.proveedorCB.Location = new System.Drawing.Point(201, 22);
             this.proveedorCB.Name = "proveedorCB";
             this.proveedorCB.Size = new System.Drawing.Size(352, 33);
             this.proveedorCB.TabIndex = 15;
+            this.proveedorCB.SelectedIndexChanged += new System.EventHandler(this.proveedorCB_SelectedIndexChanged);
             // 
             // sucursalCB
             // 
+            this.sucursalCB.DataSource = this.sucursalBindingSource;
+            this.sucursalCB.DisplayMember = "NombreCalle";
             this.sucursalCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sucursalCB.FormattingEnabled = true;
             this.sucursalCB.Location = new System.Drawing.Point(794, 22);
@@ -267,14 +277,6 @@ namespace GestProv.Presentacion._01_VISTAS
             this.comprasList.Size = new System.Drawing.Size(1084, 299);
             this.comprasList.TabIndex = 28;
             // 
-            // equipamientoBindingSource
-            // 
-            this.equipamientoBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Equipamiento);
-            // 
-            // categoriasBindingSource
-            // 
-            this.categoriasBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Categoria);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -308,6 +310,10 @@ namespace GestProv.Presentacion._01_VISTAS
             this.categoriaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.categoriaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // categoriasBindingSource
+            // 
+            this.categoriasBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Categoria);
+            // 
             // compraDataGridViewTextBoxColumn
             // 
             this.compraDataGridViewTextBoxColumn.DataPropertyName = "Compra";
@@ -315,6 +321,18 @@ namespace GestProv.Presentacion._01_VISTAS
             this.compraDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.compraDataGridViewTextBoxColumn.Name = "compraDataGridViewTextBoxColumn";
             this.compraDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // equipamientoBindingSource
+            // 
+            this.equipamientoBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Equipamiento);
+            // 
+            // proveedoresBindingSource
+            // 
+            this.proveedoresBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Proveedor);
+            // 
+            // sucursalBindingSource
+            // 
+            this.sucursalBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Sucursal);
             // 
             // CompraVista
             // 
@@ -343,8 +361,10 @@ namespace GestProv.Presentacion._01_VISTAS
             this.Name = "CompraVista";
             this.Text = "CompraVista";
             ((System.ComponentModel.ISupportInitialize)(this.comprasList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.equipamientoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.equipamientoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,5 +398,7 @@ namespace GestProv.Presentacion._01_VISTAS
         private System.Windows.Forms.DataGridViewComboBoxColumn categoriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource categoriasBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn compraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource proveedoresBindingSource;
+        private System.Windows.Forms.BindingSource sucursalBindingSource;
     }
 }

@@ -311,6 +311,14 @@ namespace GestProv.InfraestructuraDatos._01_BASE_DE_DATOS
             Compras.Add(compra);
         }
 
+
+        public void BajaCompra(Compra objetivo)
+        {
+            Compras.Remove(objetivo);
+            SaveChanges();
+        }
+
+
         //TABLA ODERNES DE SERVICIO---------------------------------------------
 
         public List<OrdenDeServicio> ObtenerOrdenesServicio()

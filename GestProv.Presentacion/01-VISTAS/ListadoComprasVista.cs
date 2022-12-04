@@ -1,4 +1,5 @@
-﻿using GestProv.Presentacion._02_PRESENTADORES;
+﻿using GestProv.Dominio._01_ENTIDADES;
+using GestProv.Presentacion._02_PRESENTADORES;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,21 +19,36 @@ namespace GestProv.Presentacion._01_VISTAS
         {
             InitializeComponent();
             _presentador = new CompraPresentador(this);
+            ActualizarListado();
         }
+
+        private void ActualizarListado()
+        {
+            comprasBindingSource.DataSource = _presentador.ObtenerListadoDeCompras();
+            comprasBindingSource.ResetBindings(false);
+        }
+
+
 
         private void agregarCompraBTN_Click(object sender, EventArgs e)
         {
             _presentador.AgregarCompra();
+            ActualizarListado();
         }
 
         private void eliminarCompraBTN_Click(object sender, EventArgs e)
         {
-            _presentador.EliminarCompra();
+            _presentador.EliminarCompra(comprasBindingSource.Current as Compra);
+            ActualizarListado();
         }
 
         private void editarCompraBTN_Click(object sender, EventArgs e)
         {
-            _presentador.EditarCompra();
+            _presentador.EditarCompra(comprasBindingSource.Current as Compra);
+            ActualizarListado();
         }
+
+
+
     }
 }
