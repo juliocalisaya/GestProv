@@ -21,10 +21,8 @@ namespace GestProv.Presentacion._01_VISTAS
             InitializeComponent();
 
             _presentador = presentador;
-            equipamientoBindingSource.DataSource = _presentador.ObtenerEquipamientos();
             categoriasBindingSource.DataSource = _presentador.ObtenerCategorias();
             proveedoresBindingSource.DataSource = _presentador.ObtenerProveedores();
-            sucursalBindingSource.DataSource = _presentador.ObtnenerSucursales(proveedoresBindingSource.Current as Proveedor);
         }
 
         public CompraVista(CompraPresentador presentador, Compra seleccion)
@@ -32,9 +30,9 @@ namespace GestProv.Presentacion._01_VISTAS
             InitializeComponent();
 
             _presentador = presentador;
-            equipamientoBindingSource.DataSource = _presentador.ObtenerEquipamientos();
+            categoriasBindingSource.DataSource = _presentador.ObtenerCategorias();
+            proveedoresBindingSource.DataSource = _presentador.ObtenerProveedores();
 
-            
             proveedorCB.SelectedIndex = 0;
             fechaCompraValueTB.Text = seleccion.FechaCompra;
             fechaEsperadaEntregaTB.Text = seleccion.FechaEstimadaEntrega;
@@ -76,11 +74,6 @@ namespace GestProv.Presentacion._01_VISTAS
 
         }
 
-        private void proveedorCB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            sucursalBindingSource.DataSource = _presentador.ObtnenerSucursales(proveedoresBindingSource.Current as Proveedor);
-        }
-
         private void guardarBTN_Click(object sender, EventArgs e)
         {
             if (validarCampos())
@@ -91,10 +84,21 @@ namespace GestProv.Presentacion._01_VISTAS
 
         private void Guardar()
         {
+            GuardarEquipamiento();
             _presentador.GuardarCompra();
             MessageBox.Show("COMPRA GUARDADA CORRECTAMENTE", "GUARDADO CORRECTO", MessageBoxButtons.OK);
             this.Close();
         }
+
+        private void GuardarEquipamiento()
+        {
+            for (int i = 0; i < comprasList.Rows.Count-1; i++)
+            {
+                _presentador.GuardarEquipamiento(comprasList.Rows[i].Cells[1].Value.ToString(), comprasList.Rows[i].Cells[2].Value.ToString(), comprasList.Rows[i].Cells[3].Value.ToString());
+            }
+        }
+
+
 
         private bool validarCampos()
         {
@@ -126,7 +130,7 @@ namespace GestProv.Presentacion._01_VISTAS
                         }
                         else
                         {
-                            if (equipamientoBindingSource.Count == 0 )
+                            if (comprasList.Rows.Count == 0 )
                             {
                                 MessageBox.Show("DEBE INGRESAR EL EQUIPAMIENTO ADQUIRIDO", "DATO FALTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return false;
@@ -180,15 +184,15 @@ namespace GestProv.Presentacion._01_VISTAS
 
                 double numero = double.Parse(valor, CultureInfo.InvariantCulture);
 
-                if (numero <= 0.0d) return false;
+                if (numero <= 0.0d) return true;
 
-                return true;
+                return false;
             }
             catch (ArgumentException ae)
             {
 
             }
-            return false;
+            return true;
 
         }
 
@@ -241,6 +245,11 @@ namespace GestProv.Presentacion._01_VISTAS
                 montoValueTB.SelectionLength = 0;
             }
             
+        }
+
+        private void comprasList_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            //comprasList.Rows[e.RowIndex].Cells[3].
         }
     }
 }

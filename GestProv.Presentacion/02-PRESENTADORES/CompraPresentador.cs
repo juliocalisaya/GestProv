@@ -18,10 +18,13 @@ namespace GestProv.Presentacion._02_PRESENTADORES
         private Compra _seleccion;
         private CompraVista _vistaCompra;
         private int _cantidadPreviaDeEquipamientos;
+        private List<Categoria> _categorias;
+
+
         public CompraPresentador(ListadoComprasVista vista)
         {
             _vista = vista;
-
+            _categorias = _contexto.ObtenerCategorias();
 
         }
 
@@ -97,7 +100,11 @@ namespace GestProv.Presentacion._02_PRESENTADORES
 
                 nuevaCompra.FechaCompra = _vistaCompra.ObtenerFechaDeCompra();
                 nuevaCompra.FechaEstimadaEntrega = _vistaCompra.ObtenerFechaDeEntregaEsperada();
-                nuevaCompra.Monto = Double.Parse(_vistaCompra.ObtenerMontoCompra(), CultureInfo.InvariantCulture);
+
+                string cadena = _vistaCompra.ObtenerMontoCompra();
+
+
+                nuevaCompra.Monto = Double.Parse(cadena.Substring(1,cadena.Length-1), CultureInfo.InvariantCulture);
                 nuevaCompra.Factura = _vistaCompra.ObtenerFactura();
                 nuevaCompra.Proveedor = _vistaCompra.ObtenerProveedor();
 
@@ -123,6 +130,16 @@ namespace GestProv.Presentacion._02_PRESENTADORES
                 _contexto.SaveChanges();
             }
         }
+
+        public void GuardarEquipamiento(string nombre, string garantia, string categoria)
+        {
+            Equipamiento auxiliar = new Equipamiento();
+            auxiliar.Nombre = nombre;
+            auxiliar.DiasGarantia = long.Parse(garantia);
+            auxiliar.Categoria = _categorias.Find(x => x.Nombre.Equals(categoria));
+            _equipamientos.Add(auxiliar);
+        }
+
 
         private Equipamiento CrearEquipamiento(Equipamiento nuevo , Compra compra)
         {

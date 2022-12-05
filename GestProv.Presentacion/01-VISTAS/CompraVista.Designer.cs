@@ -48,13 +48,12 @@ namespace GestProv.Presentacion._01_VISTAS
             this.fechaEsperadaEntregaTB = new System.Windows.Forms.TextBox();
             this.fechaRealEntregaTB = new System.Windows.Forms.TextBox();
             this.comprasList = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diasGarantiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.compraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.equipamientoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.garantia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoria = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comprasList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).BeginInit();
@@ -129,7 +128,6 @@ namespace GestProv.Presentacion._01_VISTAS
             this.proveedorCB.Name = "proveedorCB";
             this.proveedorCB.Size = new System.Drawing.Size(352, 33);
             this.proveedorCB.TabIndex = 15;
-            this.proveedorCB.SelectedIndexChanged += new System.EventHandler(this.proveedorCB_SelectedIndexChanged);
             // 
             // proveedoresBindingSource
             // 
@@ -289,16 +287,13 @@ namespace GestProv.Presentacion._01_VISTAS
             this.comprasList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comprasList.AutoGenerateColumns = false;
             this.comprasList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.comprasList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.comprasList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nombreDataGridViewTextBoxColumn,
-            this.diasGarantiaDataGridViewTextBoxColumn,
-            this.categoriaDataGridViewTextBoxColumn,
-            this.compraDataGridViewTextBoxColumn});
-            this.comprasList.DataSource = this.equipamientoBindingSource;
+            this.id,
+            this.descripcion,
+            this.garantia,
+            this.categoria});
             this.comprasList.Location = new System.Drawing.Point(62, 254);
             this.comprasList.Margin = new System.Windows.Forms.Padding(4);
             this.comprasList.Name = "comprasList";
@@ -307,55 +302,45 @@ namespace GestProv.Presentacion._01_VISTAS
             this.comprasList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.comprasList.Size = new System.Drawing.Size(1084, 299);
             this.comprasList.TabIndex = 28;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // diasGarantiaDataGridViewTextBoxColumn
-            // 
-            this.diasGarantiaDataGridViewTextBoxColumn.DataPropertyName = "DiasGarantia";
-            this.diasGarantiaDataGridViewTextBoxColumn.HeaderText = "DiasGarantia";
-            this.diasGarantiaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.diasGarantiaDataGridViewTextBoxColumn.Name = "diasGarantiaDataGridViewTextBoxColumn";
-            // 
-            // categoriaDataGridViewTextBoxColumn
-            // 
-            this.categoriaDataGridViewTextBoxColumn.DataPropertyName = "Categoria";
-            this.categoriaDataGridViewTextBoxColumn.DataSource = this.categoriasBindingSource;
-            this.categoriaDataGridViewTextBoxColumn.DisplayMember = "Nombre";
-            this.categoriaDataGridViewTextBoxColumn.HeaderText = "Categoria";
-            this.categoriaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
-            this.categoriaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.categoriaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.comprasList.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.comprasList_RowsAdded);
             // 
             // categoriasBindingSource
             // 
             this.categoriasBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Categoria);
             // 
-            // compraDataGridViewTextBoxColumn
-            // 
-            this.compraDataGridViewTextBoxColumn.DataPropertyName = "Compra";
-            this.compraDataGridViewTextBoxColumn.HeaderText = "Compra";
-            this.compraDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.compraDataGridViewTextBoxColumn.Name = "compraDataGridViewTextBoxColumn";
-            this.compraDataGridViewTextBoxColumn.Visible = false;
-            // 
             // equipamientoBindingSource
             // 
             this.equipamientoBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Equipamiento);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "Id";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripción Equipamiento";
+            this.descripcion.MinimumWidth = 6;
+            this.descripcion.Name = "descripcion";
+            // 
+            // garantia
+            // 
+            this.garantia.HeaderText = "Dias de Garantia";
+            this.garantia.MinimumWidth = 6;
+            this.garantia.Name = "garantia";
+            // 
+            // categoria
+            // 
+            this.categoria.DataSource = this.categoriasBindingSource;
+            this.categoria.DisplayMember = "Nombre";
+            this.categoria.HeaderText = "Categoria";
+            this.categoria.MinimumWidth = 6;
+            this.categoria.Name = "categoria";
+            this.categoria.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.categoria.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // CompraVista
             // 
@@ -411,12 +396,11 @@ namespace GestProv.Presentacion._01_VISTAS
         private System.Windows.Forms.TextBox fechaRealEntregaTB;
         private System.Windows.Forms.DataGridView comprasList;
         private System.Windows.Forms.BindingSource equipamientoBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn diasGarantiaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn categoriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource categoriasBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn compraDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource proveedoresBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn garantia;
+        private System.Windows.Forms.DataGridViewComboBoxColumn categoria;
     }
 }

@@ -322,6 +322,7 @@ namespace GestProv.InfraestructuraDatos._01_BASE_DE_DATOS
             return Categorias.ToList();
         }
 
+
         //TABLA COMPRAS------------------------------------------------------
 
         public List<Compra> ObtenerCompras()
