@@ -348,7 +348,8 @@ namespace GestProv.InfraestructuraDatos._01_BASE_DE_DATOS
 
         public List<Compra> ObtenerComprasMes(string query)
         {
-            return Compras.SqlQuery(query).ToList();
+            var aux = from a in Compras where a.FechaCompra.Substring(3,9).Equals(query) select a;
+            return aux.ToList();
         }
 
 

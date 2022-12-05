@@ -28,9 +28,9 @@ namespace GestProv.Presentacion._02_PRESENTADORES
 
             foreach (var item in _listado)
             {
-                DateTime fechaCompra = DateTime.ParseExact(item.Compra.FechaCompra,"dd-mm-yyyy", CultureInfo.InvariantCulture);
+                DateTime fechaCompra = DateTime.ParseExact(item.Compra.FechaCompra,"dd-MM-yyyy", CultureInfo.InvariantCulture);
                 DateTime vtoGarantia = fechaCompra.AddDays((double)item.DiasGarantia);
-                _vista.CargarListado(item.Nombre,item.Compra.FechaCompra,vtoGarantia.ToString("dd-mm-yyyy"),item.Compra.Factura,item.Categoria.Nombre);
+                _vista.CargarListado(item.Nombre,item.Compra.FechaCompra,vtoGarantia.ToString("dd-MM-yyyy"),item.Compra.Factura,item.Categoria.Nombre);
             }
 
         }
@@ -41,11 +41,11 @@ namespace GestProv.Presentacion._02_PRESENTADORES
             _vista.LimpiarListado();
             foreach (var item in _listado)
             {
-                DateTime fechaCompra = DateTime.ParseExact(item.Compra.FechaCompra, "dd-mm-yyyy", CultureInfo.InvariantCulture);
+                DateTime fechaCompra = DateTime.ParseExact(item.Compra.FechaCompra, "dd-MM-yyyy", CultureInfo.InvariantCulture);
                 DateTime vtoGarantia = fechaCompra.AddDays((double)item.DiasGarantia);
                 if (vtoGarantia.CompareTo(DateTime.Now) < 0)
                 {
-                    _vista.CargarListado(item.Nombre, item.Compra.FechaCompra, vtoGarantia.ToString("dd-mm-yyyy"), item.Compra.Factura,item.Categoria.Nombre);
+                    _vista.CargarListado(item.Nombre, item.Compra.FechaCompra, vtoGarantia.ToString("dd-MM-yyyy"), item.Compra.Factura,item.Categoria.Nombre);
                 }
 
                 

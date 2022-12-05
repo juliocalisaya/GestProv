@@ -191,7 +191,7 @@ namespace GestProv.Presentacion._01_VISTAS
         {
             try
             {
-                DateTime convercion = DateTime.ParseExact(fecha, "dd-mm-yyyy", CultureInfo.InvariantCulture);
+                DateTime convercion = DateTime.ParseExact(fecha, "dd-MM-yyyy", CultureInfo.InvariantCulture);
                 return false;
             }
             catch (ArgumentException ae)
@@ -275,7 +275,7 @@ namespace GestProv.Presentacion._01_VISTAS
 
         private void comprasList_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            //comprasList.Rows[e.RowIndex].Cells[3].
+            
         }
     }
 }
