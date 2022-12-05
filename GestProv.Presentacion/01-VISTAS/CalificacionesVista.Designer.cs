@@ -33,7 +33,6 @@ namespace GestProv.Presentacion._01_VISTAS
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ProveedoresList = new System.Windows.Forms.DataGridView();
-            this.nombreyApellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.resultadosPN = new System.Windows.Forms.Panel();
@@ -52,6 +51,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.comprasPenalizacionLB = new System.Windows.Forms.Label();
             this.tituloLB = new System.Windows.Forms.Label();
             this.calificacionValueLB = new System.Windows.Forms.Label();
+            this.nombreyApellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
@@ -112,14 +112,6 @@ namespace GestProv.Presentacion._01_VISTAS
             this.ProveedoresList.TabIndex = 2;
             this.ProveedoresList.SelectionChanged += new System.EventHandler(this.ProveedoresList_SelectionChanged);
             // 
-            // nombreyApellidoDataGridViewTextBoxColumn
-            // 
-            this.nombreyApellidoDataGridViewTextBoxColumn.DataPropertyName = "NombreyApellido";
-            this.nombreyApellidoDataGridViewTextBoxColumn.HeaderText = "NombreyApellido";
-            this.nombreyApellidoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombreyApellidoDataGridViewTextBoxColumn.Name = "nombreyApellidoDataGridViewTextBoxColumn";
-            this.nombreyApellidoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // proveedorBindingSource
             // 
             this.proveedorBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Proveedor);
@@ -171,7 +163,8 @@ namespace GestProv.Presentacion._01_VISTAS
             this.ordenesPenalizacionValueLB.AutoSize = true;
             this.ordenesPenalizacionValueLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ordenesPenalizacionValueLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.ordenesPenalizacionValueLB.Location = new System.Drawing.Point(436, 140);
+            this.ordenesPenalizacionValueLB.Location = new System.Drawing.Point(464, 140);
+            this.ordenesPenalizacionValueLB.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.ordenesPenalizacionValueLB.Name = "ordenesPenalizacionValueLB";
             this.ordenesPenalizacionValueLB.Size = new System.Drawing.Size(187, 42);
             this.ordenesPenalizacionValueLB.TabIndex = 12;
@@ -199,7 +192,8 @@ namespace GestProv.Presentacion._01_VISTAS
             this.demoraOrdenesValueLB.AutoSize = true;
             this.demoraOrdenesValueLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.demoraOrdenesValueLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.demoraOrdenesValueLB.Location = new System.Drawing.Point(667, 85);
+            this.demoraOrdenesValueLB.Location = new System.Drawing.Point(697, 85);
+            this.demoraOrdenesValueLB.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.demoraOrdenesValueLB.Name = "demoraOrdenesValueLB";
             this.demoraOrdenesValueLB.Size = new System.Drawing.Size(64, 42);
             this.demoraOrdenesValueLB.TabIndex = 3;
@@ -213,7 +207,8 @@ namespace GestProv.Presentacion._01_VISTAS
             this.cantidadOrdenesValueLB.AutoSize = true;
             this.cantidadOrdenesValueLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cantidadOrdenesValueLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.cantidadOrdenesValueLB.Location = new System.Drawing.Point(653, 30);
+            this.cantidadOrdenesValueLB.Location = new System.Drawing.Point(681, 30);
+            this.cantidadOrdenesValueLB.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.cantidadOrdenesValueLB.Name = "cantidadOrdenesValueLB";
             this.cantidadOrdenesValueLB.Size = new System.Drawing.Size(64, 42);
             this.cantidadOrdenesValueLB.TabIndex = 2;
@@ -271,7 +266,8 @@ namespace GestProv.Presentacion._01_VISTAS
             this.comprasValueLB.AutoSize = true;
             this.comprasValueLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comprasValueLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.comprasValueLB.Location = new System.Drawing.Point(559, 33);
+            this.comprasValueLB.Location = new System.Drawing.Point(585, 33);
+            this.comprasValueLB.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.comprasValueLB.Name = "comprasValueLB";
             this.comprasValueLB.Size = new System.Drawing.Size(64, 42);
             this.comprasValueLB.TabIndex = 11;
@@ -285,7 +281,8 @@ namespace GestProv.Presentacion._01_VISTAS
             this.comprasPenalizacionValueLB.AutoSize = true;
             this.comprasPenalizacionValueLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comprasPenalizacionValueLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.comprasPenalizacionValueLB.Location = new System.Drawing.Point(436, 139);
+            this.comprasPenalizacionValueLB.Location = new System.Drawing.Point(473, 139);
+            this.comprasPenalizacionValueLB.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.comprasPenalizacionValueLB.Name = "comprasPenalizacionValueLB";
             this.comprasPenalizacionValueLB.Size = new System.Drawing.Size(187, 42);
             this.comprasPenalizacionValueLB.TabIndex = 10;
@@ -327,7 +324,8 @@ namespace GestProv.Presentacion._01_VISTAS
             this.comprasRetrasoValueLB.AutoSize = true;
             this.comprasRetrasoValueLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comprasRetrasoValueLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.comprasRetrasoValueLB.Location = new System.Drawing.Point(656, 87);
+            this.comprasRetrasoValueLB.Location = new System.Drawing.Point(697, 87);
+            this.comprasRetrasoValueLB.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.comprasRetrasoValueLB.Name = "comprasRetrasoValueLB";
             this.comprasRetrasoValueLB.Size = new System.Drawing.Size(64, 42);
             this.comprasRetrasoValueLB.TabIndex = 6;
@@ -370,6 +368,14 @@ namespace GestProv.Presentacion._01_VISTAS
             this.calificacionValueLB.TabIndex = 1;
             this.calificacionValueLB.Text = "100";
             this.calificacionValueLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // nombreyApellidoDataGridViewTextBoxColumn
+            // 
+            this.nombreyApellidoDataGridViewTextBoxColumn.DataPropertyName = "NombreyApellido";
+            this.nombreyApellidoDataGridViewTextBoxColumn.HeaderText = "Proveedor";
+            this.nombreyApellidoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombreyApellidoDataGridViewTextBoxColumn.Name = "nombreyApellidoDataGridViewTextBoxColumn";
+            this.nombreyApellidoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // CalificacionesVista
             // 
@@ -422,7 +428,7 @@ namespace GestProv.Presentacion._01_VISTAS
         private System.Windows.Forms.Label cantidadOrdenesServicioLB;
         private System.Windows.Forms.Label ordenesPenalizacionValueLB;
         private System.Windows.Forms.Label ordenesPenalizacionLB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreyApellidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource proveedorBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreyApellidoDataGridViewTextBoxColumn;
     }
 }

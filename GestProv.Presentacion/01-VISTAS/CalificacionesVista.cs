@@ -51,5 +51,40 @@ namespace GestProv.Presentacion._01_VISTAS
                 _presentador.CalcularCalificacionProveedor(proveedorBindingSource.Current as Proveedor);
             }
         }
+
+        public void CargarCalificacion(string calificacion)
+        {
+            calificacionValueLB.Text = calificacion;
+        }
+
+        public void CargarCantidadDeCompras(string compras)
+        {
+            comprasValueLB.Text = compras;
+        }
+
+        public void CargarCantidadDeDemoras(string demoras)
+        {
+            comprasRetrasoValueLB.Text = demoras;
+        }
+
+        public void CargarPenalizacionCompras(string penalizacion)
+        {
+            comprasPenalizacionValueLB.Text = penalizacion;
+        }
+
+        public void CargarCantidadOrdenesDeServicio(string ordenes)
+        {
+            cantidadOrdenesValueLB.Text = ordenes;
+        }
+
+        public void CargarCantidadOrdenesDeServicioRetrasadas(string demoras)
+        {
+            demoraOrdenesValueLB.Text = demoras;
+        }
+
+        public void CargarPenalizacionOrdenesDeServicio(string penalizacion)
+        {
+            ordenesPenalizacionValueLB.Text = penalizacion;
+        }
     }
 }

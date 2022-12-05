@@ -369,6 +369,12 @@ namespace GestProv.InfraestructuraDatos._01_BASE_DE_DATOS
             GuardarCambios();
         }
 
+        public List<OrdenDeServicio> ObtenerOrdenesMes(string query)
+        {
+            var aux = from a in OrdenesDeServicio where a.FechaSolicitud.Substring(3, 9).Equals(query) select a;
+            return aux.ToList();
+        }
+
         //TABLA EQUIPAMIENTO------------------------------------------------------
 
         public List<Equipamiento> ObtenerEquipamientos()
