@@ -30,12 +30,10 @@ namespace GestProv.Presentacion._01_VISTAS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.layoutGral = new System.Windows.Forms.TableLayoutPanel();
             this.layoutIzq = new System.Windows.Forms.TableLayoutPanel();
             this.ProveedoresList = new System.Windows.Forms.DataGridView();
-            this.nombreyApellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.consultaBox = new System.Windows.Forms.GroupBox();
             this.mensualRB = new System.Windows.Forms.RadioButton();
             this.anualRB = new System.Windows.Forms.RadioButton();
@@ -67,15 +65,17 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes6BTN = new System.Windows.Forms.Button();
             this.mes1BTN = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.nombreyApellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.layoutGral.SuspendLayout();
             this.layoutIzq.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             this.consultaBox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.comprasPN.SuspendLayout();
             this.resultadosPN.SuspendLayout();
             this.mesesPN.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutGral
@@ -118,14 +118,14 @@ namespace GestProv.Presentacion._01_VISTAS
             this.ProveedoresList.AutoGenerateColumns = false;
             this.ProveedoresList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ProveedoresList.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProveedoresList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProveedoresList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.ProveedoresList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProveedoresList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreyApellidoDataGridViewTextBoxColumn});
@@ -144,17 +144,6 @@ namespace GestProv.Presentacion._01_VISTAS
             this.ProveedoresList.Size = new System.Drawing.Size(149, 419);
             this.ProveedoresList.TabIndex = 0;
             this.ProveedoresList.SelectionChanged += new System.EventHandler(this.ProveedoresList_SelectionChanged);
-            // 
-            // nombreyApellidoDataGridViewTextBoxColumn
-            // 
-            this.nombreyApellidoDataGridViewTextBoxColumn.DataPropertyName = "NombreyApellido";
-            this.nombreyApellidoDataGridViewTextBoxColumn.HeaderText = "NombreyApellido";
-            this.nombreyApellidoDataGridViewTextBoxColumn.Name = "nombreyApellidoDataGridViewTextBoxColumn";
-            this.nombreyApellidoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // proveedorBindingSource
-            // 
-            this.proveedorBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Proveedor);
             // 
             // consultaBox
             // 
@@ -271,8 +260,8 @@ namespace GestProv.Presentacion._01_VISTAS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.minimoValueLB.AutoSize = true;
             this.minimoValueLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minimoValueLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.minimoValueLB.Location = new System.Drawing.Point(375, 122);
+            this.minimoValueLB.ForeColor = System.Drawing.Color.Red;
+            this.minimoValueLB.Location = new System.Drawing.Point(399, 124);
             this.minimoValueLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.minimoValueLB.Name = "minimoValueLB";
             this.minimoValueLB.Size = new System.Drawing.Size(180, 33);
@@ -316,8 +305,8 @@ namespace GestProv.Presentacion._01_VISTAS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.maximoValueLB.AutoSize = true;
             this.maximoValueLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maximoValueLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.maximoValueLB.Location = new System.Drawing.Point(375, 88);
+            this.maximoValueLB.ForeColor = System.Drawing.Color.Red;
+            this.maximoValueLB.Location = new System.Drawing.Point(399, 90);
             this.maximoValueLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.maximoValueLB.Name = "maximoValueLB";
             this.maximoValueLB.Size = new System.Drawing.Size(180, 33);
@@ -360,8 +349,8 @@ namespace GestProv.Presentacion._01_VISTAS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.retrasoValueLB.AutoSize = true;
             this.retrasoValueLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.retrasoValueLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.retrasoValueLB.Location = new System.Drawing.Point(460, 114);
+            this.retrasoValueLB.ForeColor = System.Drawing.Color.Red;
+            this.retrasoValueLB.Location = new System.Drawing.Point(488, 114);
             this.retrasoValueLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.retrasoValueLB.Name = "retrasoValueLB";
             this.retrasoValueLB.Size = new System.Drawing.Size(119, 33);
@@ -465,6 +454,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes8BTN.TabIndex = 14;
             this.mes8BTN.Text = "Mes";
             this.mes8BTN.UseVisualStyleBackColor = false;
+            this.mes8BTN.Click += new System.EventHandler(this.mes8BTN_Click);
             // 
             // mes3BTN
             // 
@@ -482,6 +472,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes3BTN.TabIndex = 13;
             this.mes3BTN.Text = "Mes";
             this.mes3BTN.UseVisualStyleBackColor = false;
+            this.mes3BTN.Click += new System.EventHandler(this.mes3BTN_Click);
             // 
             // mes9BTN
             // 
@@ -499,6 +490,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes9BTN.TabIndex = 12;
             this.mes9BTN.Text = "Mes";
             this.mes9BTN.UseVisualStyleBackColor = false;
+            this.mes9BTN.Click += new System.EventHandler(this.mes9BTN_Click);
             // 
             // mes12BTN
             // 
@@ -516,6 +508,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes12BTN.TabIndex = 11;
             this.mes12BTN.Text = "Mes";
             this.mes12BTN.UseVisualStyleBackColor = false;
+            this.mes12BTN.Click += new System.EventHandler(this.mes12BTN_Click);
             // 
             // mes5BTN
             // 
@@ -533,6 +526,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes5BTN.TabIndex = 10;
             this.mes5BTN.Text = "Mes";
             this.mes5BTN.UseVisualStyleBackColor = false;
+            this.mes5BTN.Click += new System.EventHandler(this.mes5BTN_Click);
             // 
             // mes7BTN
             // 
@@ -550,6 +544,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes7BTN.TabIndex = 9;
             this.mes7BTN.Text = "Mes";
             this.mes7BTN.UseVisualStyleBackColor = false;
+            this.mes7BTN.Click += new System.EventHandler(this.mes7BTN_Click);
             // 
             // mes10BTN
             // 
@@ -567,6 +562,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes10BTN.TabIndex = 8;
             this.mes10BTN.Text = "Mes";
             this.mes10BTN.UseVisualStyleBackColor = false;
+            this.mes10BTN.Click += new System.EventHandler(this.mes10BTN_Click);
             // 
             // mes2BTN
             // 
@@ -584,6 +580,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes2BTN.TabIndex = 7;
             this.mes2BTN.Text = "Mes";
             this.mes2BTN.UseVisualStyleBackColor = false;
+            this.mes2BTN.Click += new System.EventHandler(this.mes2BTN_Click);
             // 
             // mes4BTN
             // 
@@ -601,6 +598,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes4BTN.TabIndex = 6;
             this.mes4BTN.Text = "Mes";
             this.mes4BTN.UseVisualStyleBackColor = false;
+            this.mes4BTN.Click += new System.EventHandler(this.mes4BTN_Click);
             // 
             // mes11BTN
             // 
@@ -618,6 +616,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes11BTN.TabIndex = 5;
             this.mes11BTN.Text = "Mes";
             this.mes11BTN.UseVisualStyleBackColor = false;
+            this.mes11BTN.Click += new System.EventHandler(this.mes11BTN_Click);
             // 
             // mes6BTN
             // 
@@ -635,6 +634,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes6BTN.TabIndex = 3;
             this.mes6BTN.Text = "Mes";
             this.mes6BTN.UseVisualStyleBackColor = false;
+            this.mes6BTN.Click += new System.EventHandler(this.mes6BTN_Click);
             // 
             // mes1BTN
             // 
@@ -652,6 +652,18 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes1BTN.TabIndex = 3;
             this.mes1BTN.Text = "Mes";
             this.mes1BTN.UseVisualStyleBackColor = false;
+            this.mes1BTN.Click += new System.EventHandler(this.mes1BTN_Click);
+            // 
+            // nombreyApellidoDataGridViewTextBoxColumn
+            // 
+            this.nombreyApellidoDataGridViewTextBoxColumn.DataPropertyName = "NombreyApellido";
+            this.nombreyApellidoDataGridViewTextBoxColumn.HeaderText = "NombreyApellido";
+            this.nombreyApellidoDataGridViewTextBoxColumn.Name = "nombreyApellidoDataGridViewTextBoxColumn";
+            this.nombreyApellidoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // proveedorBindingSource
+            // 
+            this.proveedorBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Proveedor);
             // 
             // EstadisticasVista
             // 
@@ -668,7 +680,6 @@ namespace GestProv.Presentacion._01_VISTAS
             this.layoutGral.ResumeLayout(false);
             this.layoutIzq.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             this.consultaBox.ResumeLayout(false);
             this.consultaBox.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -677,6 +688,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.resultadosPN.ResumeLayout(false);
             this.resultadosPN.PerformLayout();
             this.mesesPN.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
