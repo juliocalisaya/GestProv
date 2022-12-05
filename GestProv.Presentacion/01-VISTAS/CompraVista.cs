@@ -16,6 +16,7 @@ namespace GestProv.Presentacion._01_VISTAS
     public partial class CompraVista : Form
     {
         private CompraPresentador _presentador;
+        private bool _edicion = false;
         public CompraVista(CompraPresentador presentador)
         {
             InitializeComponent();
@@ -32,18 +33,26 @@ namespace GestProv.Presentacion._01_VISTAS
             _presentador = presentador;
             categoriasBindingSource.DataSource = _presentador.ObtenerCategorias();
             proveedoresBindingSource.DataSource = _presentador.ObtenerProveedores();
-
             proveedorCB.SelectedIndex = 0;
             fechaCompraValueTB.Text = seleccion.FechaCompra;
             fechaEsperadaEntregaTB.Text = seleccion.FechaEstimadaEntrega;
             fechaRealEntregaTB.Text = seleccion.FechaRealEntrega;
             facturaPathTB.Text = seleccion.Factura;
-            montoValueTB.Text = $"${seleccion.Monto.ToString("N")}";
+            montoValueTB.Text = $"${seleccion.Monto.ToString()}";
 
             limpiarBTN.Visible = false;
             fechaRealEntregaLB.Visible = true;
             fechaRealEntregaTB.Visible = true;
+            _edicion = true;
         }
+
+
+        public void CargarEquipamiento(string id , string nombre,string garantia, Categoria categoria)
+        {
+            comprasList.Rows.Add(id, nombre, garantia,categoria.Nombre);
+        }
+
+
 
         private void seleccionarFacturaBTN_Click(object sender, EventArgs e)
         {
@@ -84,7 +93,16 @@ namespace GestProv.Presentacion._01_VISTAS
 
         private void Guardar()
         {
-            GuardarEquipamiento();
+            if (_edicion)
+            {
+                ActualizarEquipamiento()
+            }
+            else
+            {
+                GuardarEquipamiento();
+            }
+            
+            
             _presentador.GuardarCompra();
             MessageBox.Show("COMPRA GUARDADA CORRECTAMENTE", "GUARDADO CORRECTO", MessageBoxButtons.OK);
             this.Close();
@@ -95,6 +113,14 @@ namespace GestProv.Presentacion._01_VISTAS
             for (int i = 0; i < comprasList.Rows.Count-1; i++)
             {
                 _presentador.GuardarEquipamiento(comprasList.Rows[i].Cells[1].Value.ToString(), comprasList.Rows[i].Cells[2].Value.ToString(), comprasList.Rows[i].Cells[3].Value.ToString());
+            }
+        }
+
+        private void ActualizarEquipamiento()
+        {
+            for (int i = 0; i < comprasList.Rows.Count - 1; i++)
+            {
+                _presentador.ActualizarEquipamiento(comprasList.Rows[i].Cells[0].Value.ToString(),comprasList.Rows[i].Cells[1].Value.ToString(), comprasList.Rows[i].Cells[2].Value.ToString(), comprasList.Rows[i].Cells[3].Value.ToString());
             }
         }
 

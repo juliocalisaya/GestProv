@@ -52,16 +52,11 @@ namespace GestProv.Presentacion._02_PRESENTADORES
             return null;
         }
 
-        public List<Equipamiento> ObtenerEquipamientos()
+        private void CargarEquipamientos()
         {
-            if(_seleccion == null)
+            foreach (var item in _seleccion.Equipamientos)
             {
-                _equipamientos = new List<Equipamiento>();
-                return _equipamientos;
-            }
-            else
-            {
-                return _contexto.ObtenerEquipamientosDeCompra(_seleccion);
+                _vistaCompra.CargarEquipamiento(item.Id.ToString(),item.Nombre,item.DiasGarantia.ToString(),item.Categoria);
             }
         }
 
@@ -81,6 +76,8 @@ namespace GestProv.Presentacion._02_PRESENTADORES
             _seleccion = seleccion;
             CompraVista editar = new CompraVista(this,seleccion);
             _vistaCompra = editar;
+            _equipamientos = new List<Equipamiento>();
+            CargarEquipamientos();
             _cantidadPreviaDeEquipamientos = seleccion.Equipamientos.Count;
             editar.ShowDialog();
         }
@@ -119,13 +116,21 @@ namespace GestProv.Presentacion._02_PRESENTADORES
             }
             else
             {
-                //if(_seleccion.Equipamientos.Count > _cantidadPreviaDeEquipamientos)
-                //{
-                //    for (int i = _cantidadPreviaDeEquipamientos; i < _seleccion.Equipamientos.Count; i++)
-                //    {
-                //        _seleccion.Equipamientos.Add(CrearEquipamiento(_seleccion.));
-                //    }
-                //}
+
+                _seleccion.FechaCompra = _vistaCompra.ObtenerFechaDeCompra();
+                _seleccion.FechaEstimadaEntrega = _vistaCompra.ObtenerFechaDeEntregaEsperada();
+
+                string cadena = _vistaCompra.ObtenerMontoCompra();
+
+
+                _seleccion.Monto = Double.Parse(cadena.Substring(1, cadena.Length - 1), CultureInfo.InvariantCulture);
+                _seleccion.Factura = _vistaCompra.ObtenerFactura();
+                _seleccion.Proveedor = _vistaCompra.ObtenerProveedor();
+
+                foreach (var item in _equipamientos)
+                {
+                    _seleccion.Equipamientos.Add(CrearEquipamiento(item, _seleccion));
+                }
 
                 _contexto.SaveChanges();
             }
@@ -133,12 +138,35 @@ namespace GestProv.Presentacion._02_PRESENTADORES
 
         public void GuardarEquipamiento(string nombre, string garantia, string categoria)
         {
+
             Equipamiento auxiliar = new Equipamiento();
             auxiliar.Nombre = nombre;
             auxiliar.DiasGarantia = long.Parse(garantia);
             auxiliar.Categoria = _categorias.Find(x => x.Nombre.Equals(categoria));
             _equipamientos.Add(auxiliar);
+            
         }
+
+        public void ActualizarEquipamiento(string id,string nombre, string garantia, string categoria)
+        {
+            
+            if(id != "" && id != string.Empty && id != null)
+            {
+                Equipamiento auxiliar = _seleccion.Equipamientos.Find(x => x.Id == long.Parse(id));
+                auxiliar.Nombre = nombre;
+                auxiliar.DiasGarantia = long.Parse(garantia);
+                auxiliar.Categoria = _categorias.Find(x => x.Nombre.Equals(categoria));
+            }
+            else
+            {
+                Equipamiento temporal = new Equipamiento();
+                temporal.Nombre = nombre;
+                temporal.DiasGarantia = long.Parse(garantia);
+                temporal.Categoria = _categorias.Find(x => x.Nombre.Equals(categoria));
+                _equipamientos.Add(temporal);
+            }
+        }
+
 
 
         private Equipamiento CrearEquipamiento(Equipamiento nuevo , Compra compra)

@@ -34,5 +34,10 @@ namespace GestProv.Presentacion._01_VISTAS
         {
             return _presentador.ObtenerProveedores(_contexto);
         }
+
+        private void verFacturaBTN_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

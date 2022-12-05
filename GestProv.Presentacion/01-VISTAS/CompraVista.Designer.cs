@@ -48,12 +48,12 @@ namespace GestProv.Presentacion._01_VISTAS
             this.fechaEsperadaEntregaTB = new System.Windows.Forms.TextBox();
             this.fechaRealEntregaTB = new System.Windows.Forms.TextBox();
             this.comprasList = new System.Windows.Forms.DataGridView();
-            this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.equipamientoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.garantia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoria = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.equipamientoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comprasList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).BeginInit();
@@ -304,14 +304,6 @@ namespace GestProv.Presentacion._01_VISTAS
             this.comprasList.TabIndex = 28;
             this.comprasList.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.comprasList_RowsAdded);
             // 
-            // categoriasBindingSource
-            // 
-            this.categoriasBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Categoria);
-            // 
-            // equipamientoBindingSource
-            // 
-            this.equipamientoBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Equipamiento);
-            // 
             // id
             // 
             this.id.HeaderText = "Id";
@@ -341,6 +333,14 @@ namespace GestProv.Presentacion._01_VISTAS
             this.categoria.Name = "categoria";
             this.categoria.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.categoria.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // categoriasBindingSource
+            // 
+            this.categoriasBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Categoria);
+            // 
+            // equipamientoBindingSource
+            // 
+            this.equipamientoBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Equipamiento);
             // 
             // CompraVista
             // 
