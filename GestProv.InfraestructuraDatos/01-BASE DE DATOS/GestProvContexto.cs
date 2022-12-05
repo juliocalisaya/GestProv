@@ -341,6 +341,11 @@ namespace GestProv.InfraestructuraDatos._01_BASE_DE_DATOS
             SaveChanges();
         }
 
+        public List<Compra> ObtenerComprasProveedor(Proveedor proveedor)
+        {
+            return Compras.Where(x => x.Proveedor.Id == proveedor.Id).ToList();
+        }
+
 
         //TABLA ODERNES DE SERVICIO---------------------------------------------
 

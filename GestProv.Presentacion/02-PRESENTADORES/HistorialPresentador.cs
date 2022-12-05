@@ -10,14 +10,22 @@ namespace GestProv.Presentacion._02_PRESENTADORES
 {
     public class HistorialPresentador
     {
+        private GestProvContexto _contexto = new GestProvContexto();
         public HistorialPresentador()
         {
 
         }
-        public List<Proveedor> ObtenerProveedores(GestProvContexto contexto)
+        public List<Proveedor> ObtenerProveedores()
         {
-            return contexto.ObtenerProveedoresActivos();
+            return _contexto.ObtenerProveedoresActivos();
         }
+
+        public List<Compra> ObtenerComprasProveedor(Proveedor proveedor)
+        {
+            return _contexto.ObtenerComprasProveedor(proveedor);
+        }
+
+
 
     }
 }

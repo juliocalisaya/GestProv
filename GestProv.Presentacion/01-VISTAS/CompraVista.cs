@@ -95,7 +95,7 @@ namespace GestProv.Presentacion._01_VISTAS
         {
             if (_edicion)
             {
-                ActualizarEquipamiento()
+                ActualizarEquipamiento();
             }
             else
             {
