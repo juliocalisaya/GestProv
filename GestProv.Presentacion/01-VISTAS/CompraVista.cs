@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -82,7 +83,10 @@ namespace GestProv.Presentacion._01_VISTAS
 
         private void guardarBTN_Click(object sender, EventArgs e)
         {
-            
+            if (validarCampos())
+            {
+                Guardar();
+            }
         }
 
         private void Guardar()
@@ -92,62 +96,151 @@ namespace GestProv.Presentacion._01_VISTAS
             this.Close();
         }
 
-        //private bool validarCampos()
-        //{
-        //    if (fechaCompraValueTB.Text == null || fechaCompraValueTB.Text == string.Empty )
-        //    {
-        //        MessageBox.Show("DEBE INGRESAR NOMBRE DEL TECNICO", "DATO FALTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        if (textApellido.Text == null || textApellido.Text == string.Empty)
-        //        {
-        //            MessageBox.Show("DEBE INGRESAR APELLIDO DEL TECNICO", "DATO FALTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //            return false;
-        //        }
-        //        else
-        //        {
-        //            if (txtDNI.Text == null || txtDNI.Text == string.Empty)
-        //            {
-        //                MessageBox.Show("DEBE INGRESAR DNI DEL TECNICO", "DATO FALTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //                return false;
-        //            }
-        //            else
-        //            {
-        //                if (textMail.Text == null || textMail.Text == string.Empty)
-        //                {
-        //                    MessageBox.Show("DEBE INGRESAR MAIL DEL TECNICO", "DATO FALTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //                    return false;
-        //                }
-        //                else
-        //                {
-        //                    if (textTelefono.Text == null || textTelefono.Text == string.Empty)
-        //                    {
-        //                        MessageBox.Show("DEBE INGRESAR TELEFONO DEL TECNICO", "DATO FALTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //                        return false;
-        //                    }
-        //                    else
-        //                    {
-        //                        if (comboProveedores.Text == null || comboProveedores.Text == string.Empty)
-        //                        {
-        //                            MessageBox.Show("DEBE SELECCIONAR UN PROVEEDOR ASOCIADO AL TECNICO", "DATO FALTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //                            return false;
-        //                        }
-        //                        else
-        //                        {
-        //                            return true;
-        //                        }
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
+        private bool validarCampos()
+        {
+            if (fechaCompraValueTB.Text == null || fechaCompraValueTB.Text == string.Empty || FormatoDeFechaInvalido(fechaCompraValueTB.Text))
+            {
+                MessageBox.Show("LA FECHA DE COMPRA NO RESPETA EL FORMATO", "FECHA INVALIDA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                if (fechaEsperadaEntregaTB.Text == null || fechaEsperadaEntregaTB.Text == string.Empty || FormatoDeFechaInvalido(fechaEsperadaEntregaTB.Text))
+                {
+                    MessageBox.Show("LA FECHA ESPERADA DE ENTREGA NO RESPETA EL FORMATO", "FECHA INVALIDA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+                else
+                {
+                    if (montoValueTB.Text == null || montoValueTB.Text == string.Empty || NoEsUnValorReal(montoValueTB.Text))
+                    {
+                        MessageBox.Show("EL MONTO NO PUEDE SER 0", "MONTO INVALIDO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                    else
+                    {
+                        if (facturaPathTB.Text == null || facturaPathTB.Text == string.Empty)
+                        {
+                            MessageBox.Show("DEBE SELECCIONAR EL PDF DE LA FACTURA DE COMPRA", "DATO FALTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return false;
+                        }
+                        else
+                        {
+                            if (equipamientoBindingSource.Count == 0 )
+                            {
+                                MessageBox.Show("DEBE INGRESAR EL EQUIPAMIENTO ADQUIRIDO", "DATO FALTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return false;
+                            }
+                            else
+                            {
+                                if (fechaRealEntregaTB.Visible)
+                                {
+                                    if(fechaRealEntregaTB.Text == null || fechaRealEntregaTB.Text == string.Empty || FormatoDeFechaInvalido(fechaRealEntregaTB.Text))
+                                    {
+                                        MessageBox.Show("LA FECHA REAL DE ENTREGA NO RESPETA EL FORMATO", "FECHA INVALIDA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        return false;
+                                    }
+                                    else
+                                    {
+                                        return true;
+                                    }
+                                                                       
+                                }
+                                else
+                                {
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private bool FormatoDeFechaInvalido(string fecha)
+        {
+            try
+            {
+                DateTime convercion = DateTime.ParseExact(fecha, "dd-mm-yyyy", CultureInfo.InvariantCulture);
+                return false;
+            }
+            catch (ArgumentException ae)
+            {
+
+            }
+            return true;
+
+        }
+
+        private bool NoEsUnValorReal(string cadena)
+        {
+            try
+            {
+                string valor = cadena.Substring(1, cadena.Length - 1);
+
+                double numero = double.Parse(valor, CultureInfo.InvariantCulture);
+
+                if (numero <= 0.0d) return false;
+
+                return true;
+            }
+            catch (ArgumentException ae)
+            {
+
+            }
+            return false;
+
+        }
 
 
 
+        public string ObtenerFechaDeCompra()
+        {
+            return fechaCompraValueTB.Text;
+        }
+
+        public string ObtenerFechaDeEntregaEsperada()
+        {
+            return fechaEsperadaEntregaTB.Text;
+        }
+
+        public string ObtenerFechaRealDeEntrega()
+        {
+            return fechaRealEntregaTB.Text;
+        }
+
+        public string ObtenerMontoCompra()
+        {
+            return montoValueTB.Text;
+        }
+
+        public Proveedor ObtenerProveedor()
+        {
+            return proveedoresBindingSource.Current as Proveedor;
+        }
+
+        public string ObtenerFactura()
+        {
+            return facturaPathTB.Text;
+        }
 
 
+        private void montoValueTB_TextChanged(object sender, EventArgs e)
+        {
+            if(montoValueTB.Text.Length > 0)
+            {
+                if (montoValueTB.Text[0] != '$')
+                {
+                    montoValueTB.Text = '$' + montoValueTB.Text;
+                }
+            }
+            else
+            {
+                montoValueTB.Text = "$";
+                montoValueTB.SelectionStart = montoValueTB.Text.Length;
+                montoValueTB.SelectionLength = 0;
+            }
+            
+        }
     }
 }

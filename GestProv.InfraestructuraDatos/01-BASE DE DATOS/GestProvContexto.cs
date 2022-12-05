@@ -364,5 +364,17 @@ namespace GestProv.InfraestructuraDatos._01_BASE_DE_DATOS
             return Equipamientos.ToList();
         }
 
+        public List<Equipamiento> ObtenerEquipamientosDeCompra(Compra compra)
+        {
+            return Compras.Find(compra.Id).Equipamientos;
+        }
+
+        public Equipamiento AltaEquipamiento(Equipamiento nuevo)
+        {
+            Equipamiento agregado = Equipamientos.Add(nuevo);
+            SaveChanges();
+            return agregado; 
+        }
+
     }
 }

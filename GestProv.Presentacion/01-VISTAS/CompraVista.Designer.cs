@@ -34,9 +34,8 @@ namespace GestProv.Presentacion._01_VISTAS
             this.cancelarBTN = new System.Windows.Forms.Button();
             this.guardarBTN = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.proveedorCB = new System.Windows.Forms.ComboBox();
-            this.sucursalCB = new System.Windows.Forms.ComboBox();
+            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.fechaRealEntregaLB = new System.Windows.Forms.Label();
@@ -56,17 +55,17 @@ namespace GestProv.Presentacion._01_VISTAS
             this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.compraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.equipamientoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comprasList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipamientoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // limpiarBTN
             // 
+            this.limpiarBTN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.limpiarBTN.Location = new System.Drawing.Point(62, 576);
             this.limpiarBTN.Margin = new System.Windows.Forms.Padding(4);
             this.limpiarBTN.Name = "limpiarBTN";
@@ -78,6 +77,9 @@ namespace GestProv.Presentacion._01_VISTAS
             // 
             // cancelarBTN
             // 
+            this.cancelarBTN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelarBTN.Location = new System.Drawing.Point(990, 576);
             this.cancelarBTN.Margin = new System.Windows.Forms.Padding(4);
             this.cancelarBTN.Name = "cancelarBTN";
@@ -89,6 +91,9 @@ namespace GestProv.Presentacion._01_VISTAS
             // 
             // guardarBTN
             // 
+            this.guardarBTN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guardarBTN.Location = new System.Drawing.Point(532, 576);
             this.guardarBTN.Margin = new System.Windows.Forms.Padding(4);
             this.guardarBTN.Name = "guardarBTN";
@@ -100,6 +105,9 @@ namespace GestProv.Presentacion._01_VISTAS
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label1.Location = new System.Drawing.Point(57, 26);
@@ -108,18 +116,11 @@ namespace GestProv.Presentacion._01_VISTAS
             this.label1.TabIndex = 13;
             this.label1.Text = "Proveedor:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label2.Location = new System.Drawing.Point(654, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 29);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Sucursal:";
-            // 
             // proveedorCB
             // 
+            this.proveedorCB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.proveedorCB.DataSource = this.proveedoresBindingSource;
             this.proveedorCB.DisplayMember = "NombreyApellido";
             this.proveedorCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -130,19 +131,15 @@ namespace GestProv.Presentacion._01_VISTAS
             this.proveedorCB.TabIndex = 15;
             this.proveedorCB.SelectedIndexChanged += new System.EventHandler(this.proveedorCB_SelectedIndexChanged);
             // 
-            // sucursalCB
+            // proveedoresBindingSource
             // 
-            this.sucursalCB.DataSource = this.sucursalBindingSource;
-            this.sucursalCB.DisplayMember = "NombreCalle";
-            this.sucursalCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sucursalCB.FormattingEnabled = true;
-            this.sucursalCB.Location = new System.Drawing.Point(794, 22);
-            this.sucursalCB.Name = "sucursalCB";
-            this.sucursalCB.Size = new System.Drawing.Size(352, 33);
-            this.sucursalCB.TabIndex = 16;
+            this.proveedoresBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Proveedor);
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label3.Location = new System.Drawing.Point(57, 77);
@@ -153,6 +150,9 @@ namespace GestProv.Presentacion._01_VISTAS
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label4.Location = new System.Drawing.Point(57, 200);
@@ -163,9 +163,12 @@ namespace GestProv.Presentacion._01_VISTAS
             // 
             // fechaRealEntregaLB
             // 
+            this.fechaRealEntregaLB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.fechaRealEntregaLB.AutoSize = true;
             this.fechaRealEntregaLB.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.fechaRealEntregaLB.Location = new System.Drawing.Point(622, 200);
+            this.fechaRealEntregaLB.Location = new System.Drawing.Point(671, 199);
             this.fechaRealEntregaLB.Name = "fechaRealEntregaLB";
             this.fechaRealEntregaLB.Size = new System.Drawing.Size(277, 29);
             this.fechaRealEntregaLB.TabIndex = 19;
@@ -174,6 +177,9 @@ namespace GestProv.Presentacion._01_VISTAS
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label6.Location = new System.Drawing.Point(681, 73);
@@ -184,6 +190,9 @@ namespace GestProv.Presentacion._01_VISTAS
             // 
             // fechaCompraValueTB
             // 
+            this.fechaCompraValueTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.fechaCompraValueTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechaCompraValueTB.Location = new System.Drawing.Point(300, 73);
             this.fechaCompraValueTB.MaxLength = 10;
@@ -195,15 +204,22 @@ namespace GestProv.Presentacion._01_VISTAS
             // 
             // montoValueTB
             // 
+            this.montoValueTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.montoValueTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.montoValueTB.Location = new System.Drawing.Point(794, 69);
             this.montoValueTB.Name = "montoValueTB";
             this.montoValueTB.Size = new System.Drawing.Size(252, 34);
             this.montoValueTB.TabIndex = 22;
             this.montoValueTB.Text = "$0";
+            this.montoValueTB.TextChanged += new System.EventHandler(this.montoValueTB_TextChanged);
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label7.Location = new System.Drawing.Point(57, 134);
@@ -214,6 +230,9 @@ namespace GestProv.Presentacion._01_VISTAS
             // 
             // facturaPathTB
             // 
+            this.facturaPathTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.facturaPathTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.facturaPathTB.Location = new System.Drawing.Point(169, 129);
             this.facturaPathTB.MaxLength = 10;
@@ -224,6 +243,9 @@ namespace GestProv.Presentacion._01_VISTAS
             // 
             // seleccionarFacturaBTN
             // 
+            this.seleccionarFacturaBTN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.seleccionarFacturaBTN.Location = new System.Drawing.Point(989, 122);
             this.seleccionarFacturaBTN.Margin = new System.Windows.Forms.Padding(4);
             this.seleccionarFacturaBTN.Name = "seleccionarFacturaBTN";
@@ -235,8 +257,11 @@ namespace GestProv.Presentacion._01_VISTAS
             // 
             // fechaEsperadaEntregaTB
             // 
+            this.fechaEsperadaEntregaTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.fechaEsperadaEntregaTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaEsperadaEntregaTB.Location = new System.Drawing.Point(396, 196);
+            this.fechaEsperadaEntregaTB.Location = new System.Drawing.Point(423, 195);
             this.fechaEsperadaEntregaTB.MaxLength = 10;
             this.fechaEsperadaEntregaTB.Name = "fechaEsperadaEntregaTB";
             this.fechaEsperadaEntregaTB.Size = new System.Drawing.Size(167, 34);
@@ -246,8 +271,11 @@ namespace GestProv.Presentacion._01_VISTAS
             // 
             // fechaRealEntregaTB
             // 
+            this.fechaRealEntregaTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.fechaRealEntregaTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaRealEntregaTB.Location = new System.Drawing.Point(905, 196);
+            this.fechaRealEntregaTB.Location = new System.Drawing.Point(979, 195);
             this.fechaRealEntregaTB.MaxLength = 10;
             this.fechaRealEntregaTB.Name = "fechaRealEntregaTB";
             this.fechaRealEntregaTB.Size = new System.Drawing.Size(167, 34);
@@ -258,6 +286,9 @@ namespace GestProv.Presentacion._01_VISTAS
             // 
             // comprasList
             // 
+            this.comprasList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.comprasList.AutoGenerateColumns = false;
             this.comprasList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.comprasList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -326,14 +357,6 @@ namespace GestProv.Presentacion._01_VISTAS
             // 
             this.equipamientoBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Equipamiento);
             // 
-            // proveedoresBindingSource
-            // 
-            this.proveedoresBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Proveedor);
-            // 
-            // sucursalBindingSource
-            // 
-            this.sucursalBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Sucursal);
-            // 
             // CompraVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -351,20 +374,18 @@ namespace GestProv.Presentacion._01_VISTAS
             this.Controls.Add(this.fechaRealEntregaLB);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.sucursalCB);
             this.Controls.Add(this.proveedorCB);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.limpiarBTN);
             this.Controls.Add(this.cancelarBTN);
             this.Controls.Add(this.guardarBTN);
+            this.MinimumSize = new System.Drawing.Size(1216, 677);
             this.Name = "CompraVista";
             this.Text = "CompraVista";
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comprasList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipamientoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,9 +397,7 @@ namespace GestProv.Presentacion._01_VISTAS
         private System.Windows.Forms.Button cancelarBTN;
         private System.Windows.Forms.Button guardarBTN;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox proveedorCB;
-        private System.Windows.Forms.ComboBox sucursalCB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label fechaRealEntregaLB;
@@ -399,6 +418,5 @@ namespace GestProv.Presentacion._01_VISTAS
         private System.Windows.Forms.BindingSource categoriasBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn compraDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource proveedoresBindingSource;
-        private System.Windows.Forms.BindingSource sucursalBindingSource;
     }
 }

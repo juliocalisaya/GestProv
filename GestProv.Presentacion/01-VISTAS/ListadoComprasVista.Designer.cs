@@ -117,6 +117,7 @@
             this.comprasList.DataSource = this.comprasBindingSource;
             this.comprasList.Location = new System.Drawing.Point(39, 81);
             this.comprasList.Margin = new System.Windows.Forms.Padding(4);
+            this.comprasList.MultiSelect = false;
             this.comprasList.Name = "comprasList";
             this.comprasList.ReadOnly = true;
             this.comprasList.RowHeadersVisible = false;

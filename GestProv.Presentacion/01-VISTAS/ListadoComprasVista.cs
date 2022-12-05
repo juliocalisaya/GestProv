@@ -44,8 +44,16 @@ namespace GestProv.Presentacion._01_VISTAS
 
         private void editarCompraBTN_Click(object sender, EventArgs e)
         {
-            _presentador.EditarCompra(comprasBindingSource.Current as Compra);
-            ActualizarListado();
+            if(comprasList.SelectedRows.Count > 0)
+            {
+                _presentador.EditarCompra(comprasBindingSource.Current as Compra);
+                ActualizarListado();
+            }
+            else
+            {
+                MessageBox.Show("DEBE SELECCIONAR UNA COMPRA QUE EDITAR", "ERROR", MessageBoxButtons.OK);
+            }
+            
         }
 
 
