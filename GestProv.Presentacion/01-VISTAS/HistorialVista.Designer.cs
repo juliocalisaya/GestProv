@@ -29,12 +29,11 @@ namespace GestProv.Presentacion._01_VISTAS
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ProveedoresList = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.verFacturaBTN = new System.Windows.Forms.Button();
             this.titulos = new System.Windows.Forms.Label();
@@ -44,16 +43,19 @@ namespace GestProv.Presentacion._01_VISTAS
             this.FechaCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nombreyApellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresList)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.historialList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.ProveedoresList, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
@@ -64,15 +66,17 @@ namespace GestProv.Presentacion._01_VISTAS
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 586F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1042, 673);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 476F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(782, 547);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // ProveedoresList
             // 
             this.ProveedoresList.AllowUserToAddRows = false;
             this.ProveedoresList.AllowUserToDeleteRows = false;
+            this.ProveedoresList.AutoGenerateColumns = false;
+            this.ProveedoresList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ProveedoresList.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -84,11 +88,11 @@ namespace GestProv.Presentacion._01_VISTAS
             this.ProveedoresList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ProveedoresList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProveedoresList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Descripcion});
+            this.nombreyApellidoDataGridViewTextBoxColumn});
+            this.ProveedoresList.DataSource = this.proveedorBindingSource;
             this.ProveedoresList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProveedoresList.Location = new System.Drawing.Point(10, 70);
-            this.ProveedoresList.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.ProveedoresList.Location = new System.Drawing.Point(8, 57);
+            this.ProveedoresList.Margin = new System.Windows.Forms.Padding(8, 2, 2, 2);
             this.ProveedoresList.MultiSelect = false;
             this.ProveedoresList.Name = "ProveedoresList";
             this.ProveedoresList.ReadOnly = true;
@@ -97,36 +101,18 @@ namespace GestProv.Presentacion._01_VISTAS
             this.ProveedoresList.RowTemplate.Height = 24;
             this.ProveedoresList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.ProveedoresList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProveedoresList.Size = new System.Drawing.Size(207, 580);
+            this.ProveedoresList.Size = new System.Drawing.Size(155, 472);
             this.ProveedoresList.TabIndex = 1;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            this.Id.Width = 125;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Descripcion.HeaderText = "Proveedores";
-            this.Descripcion.MinimumWidth = 6;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.verFacturaBTN);
             this.panel1.Controls.Add(this.titulos);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(226, 6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6);
+            this.panel1.Location = new System.Drawing.Point(169, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(810, 55);
+            this.panel1.Size = new System.Drawing.Size(609, 45);
             this.panel1.TabIndex = 2;
             // 
             // verFacturaBTN
@@ -139,9 +125,10 @@ namespace GestProv.Presentacion._01_VISTAS
             this.verFacturaBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.verFacturaBTN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.verFacturaBTN.ForeColor = System.Drawing.SystemColors.Control;
-            this.verFacturaBTN.Location = new System.Drawing.Point(613, 7);
+            this.verFacturaBTN.Location = new System.Drawing.Point(461, 6);
+            this.verFacturaBTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.verFacturaBTN.Name = "verFacturaBTN";
-            this.verFacturaBTN.Size = new System.Drawing.Size(191, 45);
+            this.verFacturaBTN.Size = new System.Drawing.Size(143, 37);
             this.verFacturaBTN.TabIndex = 7;
             this.verFacturaBTN.Text = "Ver Factura";
             this.verFacturaBTN.UseVisualStyleBackColor = false;
@@ -153,9 +140,10 @@ namespace GestProv.Presentacion._01_VISTAS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.titulos.AutoSize = true;
             this.titulos.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titulos.Location = new System.Drawing.Point(3, 13);
+            this.titulos.Location = new System.Drawing.Point(2, 11);
+            this.titulos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.titulos.Name = "titulos";
-            this.titulos.Size = new System.Drawing.Size(312, 42);
+            this.titulos.Size = new System.Drawing.Size(253, 33);
             this.titulos.TabIndex = 0;
             this.titulos.Text = "Historial Compras";
             // 
@@ -179,8 +167,8 @@ namespace GestProv.Presentacion._01_VISTAS
             this.Monto,
             this.Entrega});
             this.historialList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.historialList.Location = new System.Drawing.Point(223, 70);
-            this.historialList.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.historialList.Location = new System.Drawing.Point(167, 57);
+            this.historialList.Margin = new System.Windows.Forms.Padding(2, 2, 8, 2);
             this.historialList.Name = "historialList";
             this.historialList.ReadOnly = true;
             this.historialList.RowHeadersVisible = false;
@@ -188,7 +176,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.historialList.RowTemplate.Height = 24;
             this.historialList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.historialList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.historialList.Size = new System.Drawing.Size(809, 580);
+            this.historialList.Size = new System.Drawing.Size(607, 472);
             this.historialList.TabIndex = 3;
             // 
             // SucId
@@ -232,21 +220,35 @@ namespace GestProv.Presentacion._01_VISTAS
             this.Entrega.ReadOnly = true;
             this.Entrega.Width = 180;
             // 
+            // proveedorBindingSource
+            // 
+            this.proveedorBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Proveedor);
+            // 
+            // nombreyApellidoDataGridViewTextBoxColumn
+            // 
+            this.nombreyApellidoDataGridViewTextBoxColumn.DataPropertyName = "NombreyApellido";
+            this.nombreyApellidoDataGridViewTextBoxColumn.HeaderText = "NombreyApellido";
+            this.nombreyApellidoDataGridViewTextBoxColumn.Name = "nombreyApellidoDataGridViewTextBoxColumn";
+            this.nombreyApellidoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // HistorialVista
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 673);
+            this.ClientSize = new System.Drawing.Size(782, 547);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(1042, 673);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(782, 547);
             this.Name = "HistorialVista";
             this.Text = "HistorialVista";
+            this.Load += new System.EventHandler(this.HistorialVista_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresList)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.historialList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -255,8 +257,6 @@ namespace GestProv.Presentacion._01_VISTAS
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView ProveedoresList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label titulos;
         private System.Windows.Forms.Button verFacturaBTN;
@@ -266,5 +266,7 @@ namespace GestProv.Presentacion._01_VISTAS
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Entrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreyApellidoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource proveedorBindingSource;
     }
 }

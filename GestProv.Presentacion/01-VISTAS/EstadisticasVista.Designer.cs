@@ -29,12 +29,11 @@ namespace GestProv.Presentacion._01_VISTAS
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.layoutGral = new System.Windows.Forms.TableLayoutPanel();
             this.layoutIzq = new System.Windows.Forms.TableLayoutPanel();
             this.ProveedoresList = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.consultaBox = new System.Windows.Forms.GroupBox();
             this.mensualRB = new System.Windows.Forms.RadioButton();
             this.anualRB = new System.Windows.Forms.RadioButton();
@@ -66,6 +65,8 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes6BTN = new System.Windows.Forms.Button();
             this.mes1BTN = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nombreyApellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.layoutGral.SuspendLayout();
             this.layoutIzq.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresList)).BeginInit();
@@ -74,6 +75,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.comprasPN.SuspendLayout();
             this.resultadosPN.SuspendLayout();
             this.mesesPN.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutGral
@@ -113,6 +115,8 @@ namespace GestProv.Presentacion._01_VISTAS
             // 
             this.ProveedoresList.AllowUserToAddRows = false;
             this.ProveedoresList.AllowUserToDeleteRows = false;
+            this.ProveedoresList.AutoGenerateColumns = false;
+            this.ProveedoresList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ProveedoresList.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -124,8 +128,8 @@ namespace GestProv.Presentacion._01_VISTAS
             this.ProveedoresList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ProveedoresList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProveedoresList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Descripcion});
+            this.nombreyApellidoDataGridViewTextBoxColumn});
+            this.ProveedoresList.DataSource = this.proveedorBindingSource;
             this.ProveedoresList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProveedoresList.Location = new System.Drawing.Point(8, 109);
             this.ProveedoresList.Margin = new System.Windows.Forms.Padding(8, 2, 2, 2);
@@ -140,24 +144,6 @@ namespace GestProv.Presentacion._01_VISTAS
             this.ProveedoresList.Size = new System.Drawing.Size(149, 419);
             this.ProveedoresList.TabIndex = 0;
             // 
-            // Id
-            // 
-            this.Id.HeaderText = "id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            this.Id.Width = 125;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Descripcion.HeaderText = "Proveedores";
-            this.Descripcion.MinimumWidth = 6;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
             // consultaBox
             // 
             this.consultaBox.Controls.Add(this.mensualRB);
@@ -166,9 +152,9 @@ namespace GestProv.Presentacion._01_VISTAS
             this.consultaBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.consultaBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultaBox.Location = new System.Drawing.Point(8, 8);
-            this.consultaBox.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.consultaBox.Margin = new System.Windows.Forms.Padding(8);
             this.consultaBox.Name = "consultaBox";
-            this.consultaBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.consultaBox.Padding = new System.Windows.Forms.Padding(2);
             this.consultaBox.Size = new System.Drawing.Size(143, 91);
             this.consultaBox.TabIndex = 1;
             this.consultaBox.TabStop = false;
@@ -178,7 +164,7 @@ namespace GestProv.Presentacion._01_VISTAS
             // 
             this.mensualRB.AutoSize = true;
             this.mensualRB.Location = new System.Drawing.Point(16, 62);
-            this.mensualRB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mensualRB.Margin = new System.Windows.Forms.Padding(2);
             this.mensualRB.Name = "mensualRB";
             this.mensualRB.Size = new System.Drawing.Size(94, 24);
             this.mensualRB.TabIndex = 1;
@@ -190,7 +176,7 @@ namespace GestProv.Presentacion._01_VISTAS
             // 
             this.anualRB.AutoSize = true;
             this.anualRB.Location = new System.Drawing.Point(16, 33);
-            this.anualRB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.anualRB.Margin = new System.Windows.Forms.Padding(2);
             this.anualRB.Name = "anualRB";
             this.anualRB.Size = new System.Drawing.Size(73, 24);
             this.anualRB.TabIndex = 0;
@@ -229,7 +215,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.comprasPN.Controls.Add(this.minimoLB);
             this.comprasPN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comprasPN.Location = new System.Drawing.Point(6, 165);
-            this.comprasPN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.comprasPN.Margin = new System.Windows.Forms.Padding(6);
             this.comprasPN.Name = "comprasPN";
             this.comprasPN.Size = new System.Drawing.Size(611, 173);
             this.comprasPN.TabIndex = 0;
@@ -348,7 +334,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.resultadosPN.Controls.Add(this.totalLB);
             this.resultadosPN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.resultadosPN.Location = new System.Drawing.Point(6, 350);
-            this.resultadosPN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.resultadosPN.Margin = new System.Windows.Forms.Padding(6);
             this.resultadosPN.Name = "resultadosPN";
             this.resultadosPN.Size = new System.Drawing.Size(611, 173);
             this.resultadosPN.TabIndex = 1;
@@ -437,7 +423,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mesesPN.Controls.Add(this.mes1BTN, 0, 0);
             this.mesesPN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mesesPN.Location = new System.Drawing.Point(8, 8);
-            this.mesesPN.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.mesesPN.Margin = new System.Windows.Forms.Padding(8);
             this.mesesPN.Name = "mesesPN";
             this.mesesPN.RowCount = 5;
             this.mesesPN.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -459,7 +445,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes8BTN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mes8BTN.ForeColor = System.Drawing.SystemColors.Control;
             this.mes8BTN.Location = new System.Drawing.Point(461, 52);
-            this.mes8BTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mes8BTN.Margin = new System.Windows.Forms.Padding(2);
             this.mes8BTN.Name = "mes8BTN";
             this.mes8BTN.Size = new System.Drawing.Size(144, 38);
             this.mes8BTN.TabIndex = 14;
@@ -476,7 +462,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes3BTN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mes3BTN.ForeColor = System.Drawing.SystemColors.Control;
             this.mes3BTN.Location = new System.Drawing.Point(308, 2);
-            this.mes3BTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mes3BTN.Margin = new System.Windows.Forms.Padding(2);
             this.mes3BTN.Name = "mes3BTN";
             this.mes3BTN.Size = new System.Drawing.Size(141, 38);
             this.mes3BTN.TabIndex = 13;
@@ -493,7 +479,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes9BTN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mes9BTN.ForeColor = System.Drawing.SystemColors.Control;
             this.mes9BTN.Location = new System.Drawing.Point(2, 102);
-            this.mes9BTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mes9BTN.Margin = new System.Windows.Forms.Padding(2);
             this.mes9BTN.Name = "mes9BTN";
             this.mes9BTN.Size = new System.Drawing.Size(141, 39);
             this.mes9BTN.TabIndex = 12;
@@ -510,7 +496,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes12BTN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mes12BTN.ForeColor = System.Drawing.SystemColors.Control;
             this.mes12BTN.Location = new System.Drawing.Point(461, 102);
-            this.mes12BTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mes12BTN.Margin = new System.Windows.Forms.Padding(2);
             this.mes12BTN.Name = "mes12BTN";
             this.mes12BTN.Size = new System.Drawing.Size(144, 39);
             this.mes12BTN.TabIndex = 11;
@@ -527,7 +513,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes5BTN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mes5BTN.ForeColor = System.Drawing.SystemColors.Control;
             this.mes5BTN.Location = new System.Drawing.Point(2, 52);
-            this.mes5BTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mes5BTN.Margin = new System.Windows.Forms.Padding(2);
             this.mes5BTN.Name = "mes5BTN";
             this.mes5BTN.Size = new System.Drawing.Size(141, 38);
             this.mes5BTN.TabIndex = 10;
@@ -544,7 +530,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes7BTN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mes7BTN.ForeColor = System.Drawing.SystemColors.Control;
             this.mes7BTN.Location = new System.Drawing.Point(308, 52);
-            this.mes7BTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mes7BTN.Margin = new System.Windows.Forms.Padding(2);
             this.mes7BTN.Name = "mes7BTN";
             this.mes7BTN.Size = new System.Drawing.Size(141, 38);
             this.mes7BTN.TabIndex = 9;
@@ -561,7 +547,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes10BTN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mes10BTN.ForeColor = System.Drawing.SystemColors.Control;
             this.mes10BTN.Location = new System.Drawing.Point(155, 102);
-            this.mes10BTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mes10BTN.Margin = new System.Windows.Forms.Padding(2);
             this.mes10BTN.Name = "mes10BTN";
             this.mes10BTN.Size = new System.Drawing.Size(141, 39);
             this.mes10BTN.TabIndex = 8;
@@ -578,7 +564,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes2BTN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mes2BTN.ForeColor = System.Drawing.SystemColors.Control;
             this.mes2BTN.Location = new System.Drawing.Point(155, 2);
-            this.mes2BTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mes2BTN.Margin = new System.Windows.Forms.Padding(2);
             this.mes2BTN.Name = "mes2BTN";
             this.mes2BTN.Size = new System.Drawing.Size(141, 38);
             this.mes2BTN.TabIndex = 7;
@@ -595,7 +581,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes4BTN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mes4BTN.ForeColor = System.Drawing.SystemColors.Control;
             this.mes4BTN.Location = new System.Drawing.Point(461, 2);
-            this.mes4BTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mes4BTN.Margin = new System.Windows.Forms.Padding(2);
             this.mes4BTN.Name = "mes4BTN";
             this.mes4BTN.Size = new System.Drawing.Size(144, 38);
             this.mes4BTN.TabIndex = 6;
@@ -612,7 +598,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes11BTN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mes11BTN.ForeColor = System.Drawing.SystemColors.Control;
             this.mes11BTN.Location = new System.Drawing.Point(308, 102);
-            this.mes11BTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mes11BTN.Margin = new System.Windows.Forms.Padding(2);
             this.mes11BTN.Name = "mes11BTN";
             this.mes11BTN.Size = new System.Drawing.Size(141, 39);
             this.mes11BTN.TabIndex = 5;
@@ -629,7 +615,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes6BTN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mes6BTN.ForeColor = System.Drawing.SystemColors.Control;
             this.mes6BTN.Location = new System.Drawing.Point(155, 52);
-            this.mes6BTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mes6BTN.Margin = new System.Windows.Forms.Padding(2);
             this.mes6BTN.Name = "mes6BTN";
             this.mes6BTN.Size = new System.Drawing.Size(141, 38);
             this.mes6BTN.TabIndex = 3;
@@ -646,12 +632,23 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes1BTN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mes1BTN.ForeColor = System.Drawing.SystemColors.Control;
             this.mes1BTN.Location = new System.Drawing.Point(2, 2);
-            this.mes1BTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mes1BTN.Margin = new System.Windows.Forms.Padding(2);
             this.mes1BTN.Name = "mes1BTN";
             this.mes1BTN.Size = new System.Drawing.Size(141, 38);
             this.mes1BTN.TabIndex = 3;
             this.mes1BTN.Text = "Mes";
             this.mes1BTN.UseVisualStyleBackColor = false;
+            // 
+            // proveedorBindingSource
+            // 
+            this.proveedorBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Proveedor);
+            // 
+            // nombreyApellidoDataGridViewTextBoxColumn
+            // 
+            this.nombreyApellidoDataGridViewTextBoxColumn.DataPropertyName = "NombreyApellido";
+            this.nombreyApellidoDataGridViewTextBoxColumn.HeaderText = "NombreyApellido";
+            this.nombreyApellidoDataGridViewTextBoxColumn.Name = "nombreyApellidoDataGridViewTextBoxColumn";
+            this.nombreyApellidoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // EstadisticasVista
             // 
@@ -660,10 +657,11 @@ namespace GestProv.Presentacion._01_VISTAS
             this.ClientSize = new System.Drawing.Size(782, 547);
             this.Controls.Add(this.layoutGral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(782, 547);
             this.Name = "EstadisticasVista";
             this.Text = "EstadisticasVista";
+            this.Load += new System.EventHandler(this.EstadisticasVista_Load);
             this.layoutGral.ResumeLayout(false);
             this.layoutIzq.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresList)).EndInit();
@@ -675,6 +673,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.resultadosPN.ResumeLayout(false);
             this.resultadosPN.PerformLayout();
             this.mesesPN.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -684,8 +683,6 @@ namespace GestProv.Presentacion._01_VISTAS
         private System.Windows.Forms.TableLayoutPanel layoutGral;
         private System.Windows.Forms.TableLayoutPanel layoutIzq;
         private System.Windows.Forms.DataGridView ProveedoresList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.GroupBox consultaBox;
         private System.Windows.Forms.RadioButton mensualRB;
         private System.Windows.Forms.RadioButton anualRB;
@@ -717,5 +714,7 @@ namespace GestProv.Presentacion._01_VISTAS
         private System.Windows.Forms.Button mes11BTN;
         private System.Windows.Forms.Button mes6BTN;
         private System.Windows.Forms.Button mes1BTN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreyApellidoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource proveedorBindingSource;
     }
 }

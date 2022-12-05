@@ -161,7 +161,10 @@
     <Compile Include="01-VISTAS\VistaPrincipal.Designer.cs">
       <DependentUpon>VistaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="02-PRESENTADORES\CalificacionesPresentador.cs" />
     <Compile Include="02-PRESENTADORES\CompraPresentador.cs" />
+    <Compile Include="02-PRESENTADORES\EstadisticasPresentador.cs" />
+    <Compile Include="02-PRESENTADORES\HistorialPresentador.cs" />
     <Compile Include="02-PRESENTADORES\ListadoOrdenesServicioPresentador.cs" />
     <Compile Include="02-PRESENTADORES\ListadoProveedoresPresentador.cs" />
     <Compile Include="02-PRESENTADORES\ListadoTecnicosPresentador.cs" />
