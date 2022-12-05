@@ -13,5 +13,9 @@ namespace GestProv.Dominio._01_ENTIDADES
         public string RazonSocial { get; set; }
         public string CUIT { get; set; }
         public bool Estado { get; set; }
+
+        public List<int> SucursalId { get; set; }
+
+        public virtual List<Sucursal> Sucursales { get; set; }
     }
 }

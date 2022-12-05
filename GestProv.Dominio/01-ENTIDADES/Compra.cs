@@ -15,5 +15,11 @@ namespace GestProv.Dominio._01_ENTIDADES
         public string FechaRealEntrega { get; set; }
         public string Factura { get; set; }
         public virtual Proveedor Proveedor { get; set; }
+
+        public List<int> EquipamientoId { get; set; }
+
+        public virtual List<Equipamiento> Equipamientos { get; set; }
+
+
     }
 }

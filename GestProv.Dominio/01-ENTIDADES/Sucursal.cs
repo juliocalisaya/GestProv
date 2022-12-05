@@ -15,6 +15,7 @@ namespace GestProv.Dominio._01_ENTIDADES
         public string Telefono { get; set; }
         public string Mail { get; set; }
         public virtual Proveedor Proveedor { get; set; }
+
         public virtual Ciudad Ciudad { get; set; }
 
     }

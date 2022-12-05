@@ -92,6 +92,10 @@
     <Compile Include="Migrations\202212031537235_MODIFICO TAMAÑO RAZON SOCIAL.designer.cs">
       <DependentUpon>202212031537235_MODIFICO TAMAÑO RAZON SOCIAL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212050046092_muchos_a_uno.cs" />
+    <Compile Include="Migrations\202212050046092_muchos_a_uno.designer.cs">
+      <DependentUpon>202212050046092_muchos_a_uno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -135,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212031537235_MODIFICO TAMAÑO RAZON SOCIAL.resx">
       <DependentUpon>202212031537235_MODIFICO TAMAÑO RAZON SOCIAL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212050046092_muchos_a_uno.resx">
+      <DependentUpon>202212050046092_muchos_a_uno.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

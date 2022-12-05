@@ -145,6 +145,13 @@ namespace GestProv.InfraestructuraDatos._01_BASE_DE_DATOS
                 .ToTable("Sucursales")
                 .Property(d => d.Mail).HasMaxLength(50);
 
+            modelBuilder
+                .Entity<Sucursal>()
+                .ToTable("Sucursales")
+                .HasRequired(x => x.Proveedor)
+                .WithMany(c => c.Sucursales)
+                .WillCascadeOnDelete(true);
+
             //TABLA CATEGORIAS------------------------------------------------------
 
             modelBuilder
@@ -214,10 +221,25 @@ namespace GestProv.InfraestructuraDatos._01_BASE_DE_DATOS
                 .Entity<Equipamiento>()
                 .ToTable("Equipamientos");
 
+
+            modelBuilder
+                .Entity<Equipamiento>()
+                .ToTable("Equipamientos")
+                .HasRequired(x => x.Categoria);
+
             modelBuilder
                 .Entity<Equipamiento>()
                 .ToTable("Equipamientos")
                 .Property(d => d.Nombre).HasMaxLength(50);
+
+            modelBuilder
+                .Entity<Equipamiento>()
+                .ToTable("Equipamientos")
+                .HasRequired(x => x.Compra)
+                .WithMany(c => c.Equipamientos)
+                .WillCascadeOnDelete(true);
+
+
         }
 
 

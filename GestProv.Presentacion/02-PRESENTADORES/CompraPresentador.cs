@@ -62,7 +62,7 @@ namespace GestProv.Presentacion._02_PRESENTADORES
         public void EditarCompra(Compra seleccion)
         {
             _seleccion = seleccion;
-            // _equipamientos = seleccion.Equipamientos;
+            _equipamientos = seleccion.Equipamientos;
             CompraVista editar = new CompraVista(this,seleccion);
             editar.ShowDialog();
         }

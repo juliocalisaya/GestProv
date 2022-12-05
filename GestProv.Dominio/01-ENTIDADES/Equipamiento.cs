@@ -13,5 +13,8 @@ namespace GestProv.Dominio._01_ENTIDADES
         public long DiasGarantia { get; set; }
         public virtual Categoria Categoria { get; set; }
         public virtual Compra Compra { get; set; }
+
+        
+
     }
 }
