@@ -52,9 +52,10 @@ namespace GestProv.Presentacion._01_VISTAS
             }
         }
 
-        public void CargarCalificacion(string calificacion)
+        public void CargarCalificacion(string calificacion, Color colorTexto)
         {
             calificacionValueLB.Text = calificacion;
+            calificacionValueLB.ForeColor = colorTexto;
         }
 
         public void CargarCantidadDeCompras(string compras)

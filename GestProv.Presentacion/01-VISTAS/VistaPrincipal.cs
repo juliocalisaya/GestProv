@@ -25,6 +25,7 @@ namespace GestProv.Presentacion._01_VISTAS
             if (_selectedId != 1)
             {
                 _selectedId = 1;
+                seleccionLB.Text = comprasBTN.Text;
                 ListadoComprasVista vista = new ListadoComprasVista();
                 AbrirVentana(vista);
             }
@@ -35,6 +36,7 @@ namespace GestProv.Presentacion._01_VISTAS
             if (_selectedId != 2)
             {
                 _selectedId = 2;
+                seleccionLB.Text = ProveedoresBTN.Text;
                 ListadoProveedoresVista vista = new ListadoProveedoresVista();
                 AbrirVentana(vista);
             }
@@ -45,6 +47,7 @@ namespace GestProv.Presentacion._01_VISTAS
             if (_selectedId != 3)
             {
                 _selectedId = 3;
+                seleccionLB.Text = tecnicosBTN.Text;
                 ListadoTecnicosVista vista = new ListadoTecnicosVista();
                 AbrirVentana(vista);
             }
@@ -55,6 +58,7 @@ namespace GestProv.Presentacion._01_VISTAS
             if (_selectedId != 4)
             {
                 _selectedId = 4;
+                seleccionLB.Text = ordServicioBTN.Text;
                 ListadoOrdenesServiciosVista vista = new ListadoOrdenesServiciosVista();
                 AbrirVentana(vista);
             }
@@ -65,6 +69,7 @@ namespace GestProv.Presentacion._01_VISTAS
             if (_selectedId != 5)
             {
                 _selectedId = 5;
+                seleccionLB.Text = historialBTN.Text;
                 HistorialVista vista = new HistorialVista();
                 AbrirVentana(vista);
             }
@@ -75,6 +80,7 @@ namespace GestProv.Presentacion._01_VISTAS
             if (_selectedId != 6)
             {
                 _selectedId = 6;
+                seleccionLB.Text = equipamientosBTN.Text;
                 EquipamientosVista vista = new EquipamientosVista();
                 AbrirVentana(vista);
             }
@@ -85,6 +91,7 @@ namespace GestProv.Presentacion._01_VISTAS
             if (_selectedId != 7)
             {
                 _selectedId = 7;
+                seleccionLB.Text = calificacionesBTN.Text;
                 CalificacionesVista vista = new CalificacionesVista();
                 AbrirVentana(vista);
             }
@@ -95,6 +102,7 @@ namespace GestProv.Presentacion._01_VISTAS
             if (_selectedId != 8)
             {
                 _selectedId = 8;
+                seleccionLB.Text = estadisticasBTN.Text;
                 EstadisticasVista vista = new EstadisticasVista();
                 AbrirVentana(vista);
             }

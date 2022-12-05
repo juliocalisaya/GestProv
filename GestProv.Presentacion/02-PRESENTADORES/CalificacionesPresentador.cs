@@ -3,6 +3,7 @@ using GestProv.InfraestructuraDatos._01_BASE_DE_DATOS;
 using GestProv.Presentacion._01_VISTAS;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -25,9 +26,19 @@ namespace GestProv.Presentacion._02_PRESENTADORES
         private double _penalizacionServicios = 0.0d;
         private double _Calificacion = 100.0;
 
+        private Dictionary<int, Color> _codigoColores = new Dictionary<int, Color>
+        {
+            { 61,Color.FromArgb(204,0,0) },
+            { 71,Color.FromArgb(255,128,0) },
+            { 81,Color.FromArgb(0,0,153) },
+            { 91,Color.FromArgb(0,204,0) },
+            { 101,Color.DarkGoldenrod }
+        };
+
         public CalificacionesPresentador(CalificacionesVista vista)
         {
             _vista = vista;
+            
         }
 
         public List<Proveedor> ObtenerProveedores()
@@ -49,8 +60,9 @@ namespace GestProv.Presentacion._02_PRESENTADORES
 
             _Calificacion = CalcularCalificacion();
 
+            Color colorCalificacion = BuscarColor();
             //calificacion
-            _vista.CargarCalificacion(Math.Round(_Calificacion).ToString());
+            _vista.CargarCalificacion(Math.Round(_Calificacion).ToString(),colorCalificacion);
 
             //datos compras
             _vista.CargarCantidadDeCompras(_cantidadDeCompras.ToString());
@@ -165,5 +177,16 @@ namespace GestProv.Presentacion._02_PRESENTADORES
 
             }
         }
+
+        private Color BuscarColor()
+        {
+            int inferior = 0;
+            foreach (var item in _codigoColores)
+            {
+                if (_Calificacion >= inferior && _Calificacion < item.Key) return item.Value;
+            }
+            return Color.Black;
+        }
+
     }
 }
