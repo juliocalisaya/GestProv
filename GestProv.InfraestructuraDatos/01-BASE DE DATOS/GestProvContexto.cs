@@ -346,6 +346,11 @@ namespace GestProv.InfraestructuraDatos._01_BASE_DE_DATOS
             return Compras.Where(x => x.Proveedor.Id == proveedor.Id).ToList();
         }
 
+        public List<Compra> ObtenerComprasMes(string query)
+        {
+            return Compras.SqlQuery(query).ToList();
+        }
+
 
         //TABLA ODERNES DE SERVICIO---------------------------------------------
 

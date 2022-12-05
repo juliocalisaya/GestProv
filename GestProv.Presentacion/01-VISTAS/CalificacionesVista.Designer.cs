@@ -63,7 +63,7 @@ namespace GestProv.Presentacion._01_VISTAS
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.ProveedoresList, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
@@ -72,10 +72,10 @@ namespace GestProv.Presentacion._01_VISTAS
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(782, 547);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1043, 673);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // ProveedoresList
@@ -98,8 +98,8 @@ namespace GestProv.Presentacion._01_VISTAS
             this.nombreyApellidoDataGridViewTextBoxColumn});
             this.ProveedoresList.DataSource = this.proveedorBindingSource;
             this.ProveedoresList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProveedoresList.Location = new System.Drawing.Point(8, 10);
-            this.ProveedoresList.Margin = new System.Windows.Forms.Padding(8, 2, 2, 2);
+            this.ProveedoresList.Location = new System.Drawing.Point(11, 12);
+            this.ProveedoresList.Margin = new System.Windows.Forms.Padding(11, 2, 3, 2);
             this.ProveedoresList.MultiSelect = false;
             this.ProveedoresList.Name = "ProveedoresList";
             this.ProveedoresList.ReadOnly = true;
@@ -108,13 +108,15 @@ namespace GestProv.Presentacion._01_VISTAS
             this.ProveedoresList.RowTemplate.Height = 24;
             this.ProveedoresList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.ProveedoresList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProveedoresList.Size = new System.Drawing.Size(155, 519);
+            this.ProveedoresList.Size = new System.Drawing.Size(206, 639);
             this.ProveedoresList.TabIndex = 2;
+            this.ProveedoresList.SelectionChanged += new System.EventHandler(this.ProveedoresList_SelectionChanged);
             // 
             // nombreyApellidoDataGridViewTextBoxColumn
             // 
             this.nombreyApellidoDataGridViewTextBoxColumn.DataPropertyName = "NombreyApellido";
             this.nombreyApellidoDataGridViewTextBoxColumn.HeaderText = "NombreyApellido";
+            this.nombreyApellidoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nombreyApellidoDataGridViewTextBoxColumn.Name = "nombreyApellidoDataGridViewTextBoxColumn";
             this.nombreyApellidoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -131,18 +133,18 @@ namespace GestProv.Presentacion._01_VISTAS
             this.tableLayoutPanel2.Controls.Add(this.tituloLB, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.calificacionValueLB, 0, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(165, 8);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(220, 10);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 7;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(617, 523);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(823, 643);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // resultadosPN
@@ -155,10 +157,10 @@ namespace GestProv.Presentacion._01_VISTAS
             this.resultadosPN.Controls.Add(this.demorasOrdenesLB);
             this.resultadosPN.Controls.Add(this.cantidadOrdenesServicioLB);
             this.resultadosPN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.resultadosPN.Location = new System.Drawing.Point(6, 363);
-            this.resultadosPN.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.resultadosPN.Location = new System.Drawing.Point(8, 446);
+            this.resultadosPN.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.resultadosPN.Name = "resultadosPN";
-            this.resultadosPN.Size = new System.Drawing.Size(605, 160);
+            this.resultadosPN.Size = new System.Drawing.Size(807, 197);
             this.resultadosPN.TabIndex = 3;
             // 
             // ordenesPenalizacionValueLB
@@ -169,10 +171,9 @@ namespace GestProv.Presentacion._01_VISTAS
             this.ordenesPenalizacionValueLB.AutoSize = true;
             this.ordenesPenalizacionValueLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ordenesPenalizacionValueLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.ordenesPenalizacionValueLB.Location = new System.Drawing.Point(327, 114);
-            this.ordenesPenalizacionValueLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ordenesPenalizacionValueLB.Location = new System.Drawing.Point(436, 140);
             this.ordenesPenalizacionValueLB.Name = "ordenesPenalizacionValueLB";
-            this.ordenesPenalizacionValueLB.Size = new System.Drawing.Size(152, 33);
+            this.ordenesPenalizacionValueLB.Size = new System.Drawing.Size(187, 42);
             this.ordenesPenalizacionValueLB.TabIndex = 12;
             this.ordenesPenalizacionValueLB.Text = "XX Puntos";
             // 
@@ -184,10 +185,9 @@ namespace GestProv.Presentacion._01_VISTAS
             this.ordenesPenalizacionLB.AutoSize = true;
             this.ordenesPenalizacionLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ordenesPenalizacionLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.ordenesPenalizacionLB.Location = new System.Drawing.Point(148, 114);
-            this.ordenesPenalizacionLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ordenesPenalizacionLB.Location = new System.Drawing.Point(197, 140);
             this.ordenesPenalizacionLB.Name = "ordenesPenalizacionLB";
-            this.ordenesPenalizacionLB.Size = new System.Drawing.Size(188, 33);
+            this.ordenesPenalizacionLB.Size = new System.Drawing.Size(236, 42);
             this.ordenesPenalizacionLB.TabIndex = 11;
             this.ordenesPenalizacionLB.Text = "Penalización:";
             // 
@@ -199,10 +199,9 @@ namespace GestProv.Presentacion._01_VISTAS
             this.demoraOrdenesValueLB.AutoSize = true;
             this.demoraOrdenesValueLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.demoraOrdenesValueLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.demoraOrdenesValueLB.Location = new System.Drawing.Point(500, 69);
-            this.demoraOrdenesValueLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.demoraOrdenesValueLB.Location = new System.Drawing.Point(667, 85);
             this.demoraOrdenesValueLB.Name = "demoraOrdenesValueLB";
-            this.demoraOrdenesValueLB.Size = new System.Drawing.Size(53, 33);
+            this.demoraOrdenesValueLB.Size = new System.Drawing.Size(64, 42);
             this.demoraOrdenesValueLB.TabIndex = 3;
             this.demoraOrdenesValueLB.Text = "XX";
             // 
@@ -214,10 +213,9 @@ namespace GestProv.Presentacion._01_VISTAS
             this.cantidadOrdenesValueLB.AutoSize = true;
             this.cantidadOrdenesValueLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cantidadOrdenesValueLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.cantidadOrdenesValueLB.Location = new System.Drawing.Point(490, 24);
-            this.cantidadOrdenesValueLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.cantidadOrdenesValueLB.Location = new System.Drawing.Point(653, 30);
             this.cantidadOrdenesValueLB.Name = "cantidadOrdenesValueLB";
-            this.cantidadOrdenesValueLB.Size = new System.Drawing.Size(53, 33);
+            this.cantidadOrdenesValueLB.Size = new System.Drawing.Size(64, 42);
             this.cantidadOrdenesValueLB.TabIndex = 2;
             this.cantidadOrdenesValueLB.Text = "XX";
             // 
@@ -229,10 +227,9 @@ namespace GestProv.Presentacion._01_VISTAS
             this.demorasOrdenesLB.AutoSize = true;
             this.demorasOrdenesLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.demorasOrdenesLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.demorasOrdenesLB.Location = new System.Drawing.Point(52, 69);
-            this.demorasOrdenesLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.demorasOrdenesLB.Location = new System.Drawing.Point(69, 85);
             this.demorasOrdenesLB.Name = "demorasOrdenesLB";
-            this.demorasOrdenesLB.Size = new System.Drawing.Size(475, 33);
+            this.demorasOrdenesLB.Size = new System.Drawing.Size(591, 42);
             this.demorasOrdenesLB.TabIndex = 1;
             this.demorasOrdenesLB.Text = "Cantidad de Servicios con demora:";
             // 
@@ -244,10 +241,9 @@ namespace GestProv.Presentacion._01_VISTAS
             this.cantidadOrdenesServicioLB.AutoSize = true;
             this.cantidadOrdenesServicioLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cantidadOrdenesServicioLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.cantidadOrdenesServicioLB.Location = new System.Drawing.Point(62, 24);
-            this.cantidadOrdenesServicioLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.cantidadOrdenesServicioLB.Location = new System.Drawing.Point(83, 30);
             this.cantidadOrdenesServicioLB.Name = "cantidadOrdenesServicioLB";
-            this.cantidadOrdenesServicioLB.Size = new System.Drawing.Size(456, 33);
+            this.cantidadOrdenesServicioLB.Size = new System.Drawing.Size(566, 42);
             this.cantidadOrdenesServicioLB.TabIndex = 0;
             this.cantidadOrdenesServicioLB.Text = "Cantidad de Ordenes de Servicio:";
             // 
@@ -261,10 +257,10 @@ namespace GestProv.Presentacion._01_VISTAS
             this.comprasPN.Controls.Add(this.comprasRetrasoValueLB);
             this.comprasPN.Controls.Add(this.comprasPenalizacionLB);
             this.comprasPN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comprasPN.Location = new System.Drawing.Point(6, 195);
-            this.comprasPN.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.comprasPN.Location = new System.Drawing.Point(8, 240);
+            this.comprasPN.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.comprasPN.Name = "comprasPN";
-            this.comprasPN.Size = new System.Drawing.Size(605, 160);
+            this.comprasPN.Size = new System.Drawing.Size(807, 196);
             this.comprasPN.TabIndex = 2;
             // 
             // comprasValueLB
@@ -275,10 +271,9 @@ namespace GestProv.Presentacion._01_VISTAS
             this.comprasValueLB.AutoSize = true;
             this.comprasValueLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comprasValueLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.comprasValueLB.Location = new System.Drawing.Point(419, 27);
-            this.comprasValueLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.comprasValueLB.Location = new System.Drawing.Point(559, 33);
             this.comprasValueLB.Name = "comprasValueLB";
-            this.comprasValueLB.Size = new System.Drawing.Size(53, 33);
+            this.comprasValueLB.Size = new System.Drawing.Size(64, 42);
             this.comprasValueLB.TabIndex = 11;
             this.comprasValueLB.Text = "XX";
             // 
@@ -290,10 +285,9 @@ namespace GestProv.Presentacion._01_VISTAS
             this.comprasPenalizacionValueLB.AutoSize = true;
             this.comprasPenalizacionValueLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comprasPenalizacionValueLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.comprasPenalizacionValueLB.Location = new System.Drawing.Point(327, 113);
-            this.comprasPenalizacionValueLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.comprasPenalizacionValueLB.Location = new System.Drawing.Point(436, 139);
             this.comprasPenalizacionValueLB.Name = "comprasPenalizacionValueLB";
-            this.comprasPenalizacionValueLB.Size = new System.Drawing.Size(152, 33);
+            this.comprasPenalizacionValueLB.Size = new System.Drawing.Size(187, 42);
             this.comprasPenalizacionValueLB.TabIndex = 10;
             this.comprasPenalizacionValueLB.Text = "XX Puntos";
             // 
@@ -305,10 +299,9 @@ namespace GestProv.Presentacion._01_VISTAS
             this.comprasLB.AutoSize = true;
             this.comprasLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comprasLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.comprasLB.Location = new System.Drawing.Point(130, 27);
-            this.comprasLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.comprasLB.Location = new System.Drawing.Point(173, 33);
             this.comprasLB.Name = "comprasLB";
-            this.comprasLB.Size = new System.Drawing.Size(306, 33);
+            this.comprasLB.Size = new System.Drawing.Size(379, 42);
             this.comprasLB.TabIndex = 9;
             this.comprasLB.Text = "Cantidad de Compras:";
             // 
@@ -320,10 +313,9 @@ namespace GestProv.Presentacion._01_VISTAS
             this.comprasRetrasosLB.AutoSize = true;
             this.comprasRetrasosLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comprasRetrasosLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.comprasRetrasosLB.Location = new System.Drawing.Point(62, 71);
-            this.comprasRetrasosLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.comprasRetrasosLB.Location = new System.Drawing.Point(83, 87);
             this.comprasRetrasosLB.Name = "comprasRetrasosLB";
-            this.comprasRetrasosLB.Size = new System.Drawing.Size(459, 33);
+            this.comprasRetrasosLB.Size = new System.Drawing.Size(568, 42);
             this.comprasRetrasosLB.TabIndex = 8;
             this.comprasRetrasosLB.Text = "Cantidad de Retrasos de Entrega:";
             // 
@@ -335,10 +327,9 @@ namespace GestProv.Presentacion._01_VISTAS
             this.comprasRetrasoValueLB.AutoSize = true;
             this.comprasRetrasoValueLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comprasRetrasoValueLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.comprasRetrasoValueLB.Location = new System.Drawing.Point(492, 71);
-            this.comprasRetrasoValueLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.comprasRetrasoValueLB.Location = new System.Drawing.Point(656, 87);
             this.comprasRetrasoValueLB.Name = "comprasRetrasoValueLB";
-            this.comprasRetrasoValueLB.Size = new System.Drawing.Size(53, 33);
+            this.comprasRetrasoValueLB.Size = new System.Drawing.Size(64, 42);
             this.comprasRetrasoValueLB.TabIndex = 6;
             this.comprasRetrasoValueLB.Text = "XX";
             // 
@@ -350,10 +341,9 @@ namespace GestProv.Presentacion._01_VISTAS
             this.comprasPenalizacionLB.AutoSize = true;
             this.comprasPenalizacionLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comprasPenalizacionLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.comprasPenalizacionLB.Location = new System.Drawing.Point(148, 113);
-            this.comprasPenalizacionLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.comprasPenalizacionLB.Location = new System.Drawing.Point(197, 139);
             this.comprasPenalizacionLB.Name = "comprasPenalizacionLB";
-            this.comprasPenalizacionLB.Size = new System.Drawing.Size(188, 33);
+            this.comprasPenalizacionLB.Size = new System.Drawing.Size(236, 42);
             this.comprasPenalizacionLB.TabIndex = 5;
             this.comprasPenalizacionLB.Text = "Penalización:";
             // 
@@ -362,10 +352,9 @@ namespace GestProv.Presentacion._01_VISTAS
             this.tituloLB.AutoSize = true;
             this.tituloLB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tituloLB.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tituloLB.Location = new System.Drawing.Point(2, 0);
-            this.tituloLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.tituloLB.Location = new System.Drawing.Point(3, 0);
             this.tituloLB.Name = "tituloLB";
-            this.tituloLB.Size = new System.Drawing.Size(613, 49);
+            this.tituloLB.Size = new System.Drawing.Size(817, 60);
             this.tituloLB.TabIndex = 0;
             this.tituloLB.Text = "Calificación";
             this.tituloLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -375,29 +364,30 @@ namespace GestProv.Presentacion._01_VISTAS
             this.calificacionValueLB.AutoSize = true;
             this.calificacionValueLB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.calificacionValueLB.Font = new System.Drawing.Font("Arial Black", 70F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calificacionValueLB.Location = new System.Drawing.Point(2, 57);
-            this.calificacionValueLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.calificacionValueLB.Location = new System.Drawing.Point(3, 70);
             this.calificacionValueLB.Name = "calificacionValueLB";
-            this.calificacionValueLB.Size = new System.Drawing.Size(613, 130);
+            this.calificacionValueLB.Size = new System.Drawing.Size(817, 160);
             this.calificacionValueLB.TabIndex = 1;
             this.calificacionValueLB.Text = "100";
             this.calificacionValueLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CalificacionesVista
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(782, 547);
+            this.ClientSize = new System.Drawing.Size(1043, 673);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(782, 547);
+            this.MinimumSize = new System.Drawing.Size(1043, 673);
             this.Name = "CalificacionesVista";
             this.Text = "CalificacionesVista";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CalificacionesVista_FormClosing);
             this.Load += new System.EventHandler(this.CalificacionesVista_Load);
+            this.VisibleChanged += new System.EventHandler(this.CalificacionesVista_VisibleChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
