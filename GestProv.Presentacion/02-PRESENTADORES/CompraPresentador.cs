@@ -67,6 +67,7 @@ namespace GestProv.Presentacion._02_PRESENTADORES
             CompraVista agregar = new CompraVista(this);
             _seleccion = null;
             _vistaCompra = agregar;
+            _equipamientos = new List<Equipamiento>();
             agregar.ShowDialog();
         }
 

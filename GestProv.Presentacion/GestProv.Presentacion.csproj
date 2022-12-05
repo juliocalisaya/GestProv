@@ -163,6 +163,7 @@
     </Compile>
     <Compile Include="02-PRESENTADORES\CalificacionesPresentador.cs" />
     <Compile Include="02-PRESENTADORES\CompraPresentador.cs" />
+    <Compile Include="02-PRESENTADORES\EquipamientosPresentador.cs" />
     <Compile Include="02-PRESENTADORES\EstadisticasPresentador.cs" />
     <Compile Include="02-PRESENTADORES\HistorialPresentador.cs" />
     <Compile Include="02-PRESENTADORES\ListadoOrdenesServicioPresentador.cs" />

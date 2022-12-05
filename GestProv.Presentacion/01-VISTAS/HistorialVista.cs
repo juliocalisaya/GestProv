@@ -59,5 +59,10 @@ namespace GestProv.Presentacion._01_VISTAS
 
             _oncreate = false;
         }
+
+        private void HistorialVista_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _oncreate = true;
+        }
     }
 }

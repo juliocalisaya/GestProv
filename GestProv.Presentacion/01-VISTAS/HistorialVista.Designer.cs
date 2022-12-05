@@ -30,11 +30,11 @@ namespace GestProv.Presentacion._01_VISTAS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ProveedoresList = new System.Windows.Forms.DataGridView();
             this.nombreyApellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +43,6 @@ namespace GestProv.Presentacion._01_VISTAS
             this.verFacturaBTN = new System.Windows.Forms.Button();
             this.titulos = new System.Windows.Forms.Label();
             this.historialList = new System.Windows.Forms.DataGridView();
-            this.compraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +50,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.fechaRealEntregaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.facturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.proveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.compraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
@@ -85,14 +85,14 @@ namespace GestProv.Presentacion._01_VISTAS
             this.ProveedoresList.AutoGenerateColumns = false;
             this.ProveedoresList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ProveedoresList.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProveedoresList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProveedoresList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ProveedoresList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProveedoresList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreyApellidoDataGridViewTextBoxColumn});
@@ -172,14 +172,14 @@ namespace GestProv.Presentacion._01_VISTAS
             this.historialList.AllowUserToAddRows = false;
             this.historialList.AllowUserToDeleteRows = false;
             this.historialList.AutoGenerateColumns = false;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.historialList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.historialList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.historialList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.historialList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -204,10 +204,6 @@ namespace GestProv.Presentacion._01_VISTAS
             this.historialList.Size = new System.Drawing.Size(809, 569);
             this.historialList.TabIndex = 3;
             // 
-            // compraBindingSource
-            // 
-            this.compraBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Compra);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -221,8 +217,8 @@ namespace GestProv.Presentacion._01_VISTAS
             // fechaCompraDataGridViewTextBoxColumn
             // 
             this.fechaCompraDataGridViewTextBoxColumn.DataPropertyName = "FechaCompra";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.fechaCompraDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.fechaCompraDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.fechaCompraDataGridViewTextBoxColumn.HeaderText = "FechaCompra";
             this.fechaCompraDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.fechaCompraDataGridViewTextBoxColumn.Name = "fechaCompraDataGridViewTextBoxColumn";
@@ -232,10 +228,10 @@ namespace GestProv.Presentacion._01_VISTAS
             // montoDataGridViewTextBoxColumn
             // 
             this.montoDataGridViewTextBoxColumn.DataPropertyName = "Monto";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.Format = "C2";
-            dataGridViewCellStyle14.NullValue = null;
-            this.montoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.montoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.montoDataGridViewTextBoxColumn.HeaderText = "Monto";
             this.montoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.montoDataGridViewTextBoxColumn.Name = "montoDataGridViewTextBoxColumn";
@@ -255,8 +251,8 @@ namespace GestProv.Presentacion._01_VISTAS
             // fechaRealEntregaDataGridViewTextBoxColumn
             // 
             this.fechaRealEntregaDataGridViewTextBoxColumn.DataPropertyName = "FechaRealEntrega";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.fechaRealEntregaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.fechaRealEntregaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.fechaRealEntregaDataGridViewTextBoxColumn.HeaderText = "Entrega";
             this.fechaRealEntregaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.fechaRealEntregaDataGridViewTextBoxColumn.Name = "fechaRealEntregaDataGridViewTextBoxColumn";
@@ -282,6 +278,10 @@ namespace GestProv.Presentacion._01_VISTAS
             this.proveedorDataGridViewTextBoxColumn.Visible = false;
             this.proveedorDataGridViewTextBoxColumn.Width = 125;
             // 
+            // compraBindingSource
+            // 
+            this.compraBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Compra);
+            // 
             // HistorialVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -293,6 +293,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.MinimumSize = new System.Drawing.Size(1043, 673);
             this.Name = "HistorialVista";
             this.Text = "HistorialVista";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HistorialVista_FormClosing);
             this.VisibleChanged += new System.EventHandler(this.HistorialVista_VisibleChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresList)).EndInit();

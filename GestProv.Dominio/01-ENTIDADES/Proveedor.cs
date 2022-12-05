@@ -17,5 +17,11 @@ namespace GestProv.Dominio._01_ENTIDADES
         public List<int> SucursalId { get; set; }
 
         public virtual List<Sucursal> Sucursales { get; set; }
+
+        public override string ToString()
+        {
+            return NombreyApellido;
+        }
+
     }
 }
