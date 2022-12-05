@@ -20,5 +20,10 @@ namespace GestProv.Presentacion._02_PRESENTADORES
         {
             return contexto.ObtenerProveedoresActivos();
         }
+
+        public List<Compra> ObtenerComprasProveedor(Proveedor proveedor, GestProvContexto contexto)
+        {
+            return contexto.ObtenerComprasProveedor(proveedor);
+        }
     }
 }

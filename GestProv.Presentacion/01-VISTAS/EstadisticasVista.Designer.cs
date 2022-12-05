@@ -30,10 +30,12 @@ namespace GestProv.Presentacion._01_VISTAS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.layoutGral = new System.Windows.Forms.TableLayoutPanel();
             this.layoutIzq = new System.Windows.Forms.TableLayoutPanel();
             this.ProveedoresList = new System.Windows.Forms.DataGridView();
+            this.nombreyApellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.consultaBox = new System.Windows.Forms.GroupBox();
             this.mensualRB = new System.Windows.Forms.RadioButton();
             this.anualRB = new System.Windows.Forms.RadioButton();
@@ -65,17 +67,15 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes6BTN = new System.Windows.Forms.Button();
             this.mes1BTN = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nombreyApellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.layoutGral.SuspendLayout();
             this.layoutIzq.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             this.consultaBox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.comprasPN.SuspendLayout();
             this.resultadosPN.SuspendLayout();
             this.mesesPN.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutGral
@@ -118,14 +118,14 @@ namespace GestProv.Presentacion._01_VISTAS
             this.ProveedoresList.AutoGenerateColumns = false;
             this.ProveedoresList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ProveedoresList.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProveedoresList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProveedoresList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.ProveedoresList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProveedoresList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreyApellidoDataGridViewTextBoxColumn});
@@ -143,6 +143,18 @@ namespace GestProv.Presentacion._01_VISTAS
             this.ProveedoresList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProveedoresList.Size = new System.Drawing.Size(149, 419);
             this.ProveedoresList.TabIndex = 0;
+            this.ProveedoresList.SelectionChanged += new System.EventHandler(this.ProveedoresList_SelectionChanged);
+            // 
+            // nombreyApellidoDataGridViewTextBoxColumn
+            // 
+            this.nombreyApellidoDataGridViewTextBoxColumn.DataPropertyName = "NombreyApellido";
+            this.nombreyApellidoDataGridViewTextBoxColumn.HeaderText = "NombreyApellido";
+            this.nombreyApellidoDataGridViewTextBoxColumn.Name = "nombreyApellidoDataGridViewTextBoxColumn";
+            this.nombreyApellidoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // proveedorBindingSource
+            // 
+            this.proveedorBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Proveedor);
             // 
             // consultaBox
             // 
@@ -171,6 +183,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mensualRB.TabStop = true;
             this.mensualRB.Text = "Mensual";
             this.mensualRB.UseVisualStyleBackColor = true;
+            this.mensualRB.CheckedChanged += new System.EventHandler(this.mensualRB_CheckedChanged);
             // 
             // anualRB
             // 
@@ -183,6 +196,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.anualRB.TabStop = true;
             this.anualRB.Text = "Anual";
             this.anualRB.UseVisualStyleBackColor = true;
+            this.anualRB.CheckedChanged += new System.EventHandler(this.anualRB_CheckedChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -242,8 +256,8 @@ namespace GestProv.Presentacion._01_VISTAS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comprasValueLB.AutoSize = true;
             this.comprasValueLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comprasValueLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.comprasValueLB.Location = new System.Drawing.Point(306, 54);
+            this.comprasValueLB.ForeColor = System.Drawing.Color.Red;
+            this.comprasValueLB.Location = new System.Drawing.Point(331, 55);
             this.comprasValueLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.comprasValueLB.Name = "comprasValueLB";
             this.comprasValueLB.Size = new System.Drawing.Size(53, 33);
@@ -361,8 +375,8 @@ namespace GestProv.Presentacion._01_VISTAS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.totalValueLB.AutoSize = true;
             this.totalValueLB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalValueLB.ForeColor = System.Drawing.SystemColors.Control;
-            this.totalValueLB.Location = new System.Drawing.Point(391, 54);
+            this.totalValueLB.ForeColor = System.Drawing.Color.Red;
+            this.totalValueLB.Location = new System.Drawing.Point(417, 55);
             this.totalValueLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.totalValueLB.Name = "totalValueLB";
             this.totalValueLB.Size = new System.Drawing.Size(180, 33);
@@ -639,17 +653,6 @@ namespace GestProv.Presentacion._01_VISTAS
             this.mes1BTN.Text = "Mes";
             this.mes1BTN.UseVisualStyleBackColor = false;
             // 
-            // proveedorBindingSource
-            // 
-            this.proveedorBindingSource.DataSource = typeof(GestProv.Dominio._01_ENTIDADES.Proveedor);
-            // 
-            // nombreyApellidoDataGridViewTextBoxColumn
-            // 
-            this.nombreyApellidoDataGridViewTextBoxColumn.DataPropertyName = "NombreyApellido";
-            this.nombreyApellidoDataGridViewTextBoxColumn.HeaderText = "NombreyApellido";
-            this.nombreyApellidoDataGridViewTextBoxColumn.Name = "nombreyApellidoDataGridViewTextBoxColumn";
-            this.nombreyApellidoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // EstadisticasVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -665,6 +668,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.layoutGral.ResumeLayout(false);
             this.layoutIzq.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             this.consultaBox.ResumeLayout(false);
             this.consultaBox.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -673,7 +677,6 @@ namespace GestProv.Presentacion._01_VISTAS
             this.resultadosPN.ResumeLayout(false);
             this.resultadosPN.PerformLayout();
             this.mesesPN.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
