@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListadoSucursalesVista));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.nombreCalleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,18 +63,21 @@
             this.proveedorDataGridViewTextBoxColumn,
             this.ciudadDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.sucursalBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(32, 53);
+            this.dataGridView1.Location = new System.Drawing.Point(43, 65);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(738, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(984, 322);
             this.dataGridView1.TabIndex = 0;
             // 
             // nombreCalleDataGridViewTextBoxColumn
             // 
             this.nombreCalleDataGridViewTextBoxColumn.DataPropertyName = "NombreCalle";
             this.nombreCalleDataGridViewTextBoxColumn.HeaderText = "NombreCalle";
+            this.nombreCalleDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nombreCalleDataGridViewTextBoxColumn.Name = "nombreCalleDataGridViewTextBoxColumn";
             this.nombreCalleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -81,6 +85,7 @@
             // 
             this.alturaDataGridViewTextBoxColumn.DataPropertyName = "Altura";
             this.alturaDataGridViewTextBoxColumn.HeaderText = "Altura";
+            this.alturaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.alturaDataGridViewTextBoxColumn.Name = "alturaDataGridViewTextBoxColumn";
             this.alturaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -88,6 +93,7 @@
             // 
             this.pisoDataGridViewTextBoxColumn.DataPropertyName = "Piso";
             this.pisoDataGridViewTextBoxColumn.HeaderText = "Piso";
+            this.pisoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.pisoDataGridViewTextBoxColumn.Name = "pisoDataGridViewTextBoxColumn";
             this.pisoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -95,6 +101,7 @@
             // 
             this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
             this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
             this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -102,6 +109,7 @@
             // 
             this.mailDataGridViewTextBoxColumn.DataPropertyName = "Mail";
             this.mailDataGridViewTextBoxColumn.HeaderText = "Mail";
+            this.mailDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
             this.mailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -109,6 +117,7 @@
             // 
             this.proveedorDataGridViewTextBoxColumn.DataPropertyName = "Proveedor";
             this.proveedorDataGridViewTextBoxColumn.HeaderText = "Proveedor";
+            this.proveedorDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.proveedorDataGridViewTextBoxColumn.Name = "proveedorDataGridViewTextBoxColumn";
             this.proveedorDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -116,6 +125,7 @@
             // 
             this.ciudadDataGridViewTextBoxColumn.DataPropertyName = "Ciudad";
             this.ciudadDataGridViewTextBoxColumn.HeaderText = "Ciudad";
+            this.ciudadDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.ciudadDataGridViewTextBoxColumn.Name = "ciudadDataGridViewTextBoxColumn";
             this.ciudadDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -125,45 +135,59 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(511, 237);
+            this.button3.BackColor = System.Drawing.Color.DarkOrange;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.Control;
+            this.button3.Location = new System.Drawing.Point(864, 426);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(122, 55);
+            this.button3.Size = new System.Drawing.Size(163, 68);
             this.button3.TabIndex = 8;
             this.button3.Text = "Editar Sucursal";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(324, 237);
+            this.button2.BackColor = System.Drawing.Color.Firebrick;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.Control;
+            this.button2.Location = new System.Drawing.Point(437, 426);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 55);
+            this.button2.Size = new System.Drawing.Size(163, 68);
             this.button2.TabIndex = 7;
             this.button2.Text = "Eliminar Sucursal";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(177, 237);
+            this.button1.BackColor = System.Drawing.Color.ForestGreen;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(43, 426);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 55);
+            this.button1.Size = new System.Drawing.Size(133, 68);
             this.button1.TabIndex = 6;
             this.button1.Text = "Nueva Sucursal";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ListadoSucursalesVista
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 329);
+            this.ClientSize = new System.Drawing.Size(1067, 532);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ListadoSucursalesVista";
-            this.Text = "SucursalesVista";
+            this.Text = "Sucursales";
             this.Load += new System.EventHandler(this.SucursalesVista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();

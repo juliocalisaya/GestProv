@@ -30,6 +30,7 @@ namespace GestProv.Presentacion._01_VISTAS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompraVista));
             this.limpiarBTN = new System.Windows.Forms.Button();
             this.cancelarBTN = new System.Windows.Forms.Button();
             this.guardarBTN = new System.Windows.Forms.Button();
@@ -65,13 +66,16 @@ namespace GestProv.Presentacion._01_VISTAS
             this.limpiarBTN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.limpiarBTN.BackColor = System.Drawing.Color.Chocolate;
+            this.limpiarBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.limpiarBTN.ForeColor = System.Drawing.SystemColors.Control;
             this.limpiarBTN.Location = new System.Drawing.Point(62, 576);
             this.limpiarBTN.Margin = new System.Windows.Forms.Padding(4);
             this.limpiarBTN.Name = "limpiarBTN";
             this.limpiarBTN.Size = new System.Drawing.Size(156, 41);
             this.limpiarBTN.TabIndex = 11;
             this.limpiarBTN.Text = "Limpiar";
-            this.limpiarBTN.UseVisualStyleBackColor = true;
+            this.limpiarBTN.UseVisualStyleBackColor = false;
             this.limpiarBTN.Click += new System.EventHandler(this.limpiarBTN_Click);
             // 
             // cancelarBTN
@@ -79,13 +83,16 @@ namespace GestProv.Presentacion._01_VISTAS
             this.cancelarBTN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelarBTN.BackColor = System.Drawing.Color.Firebrick;
+            this.cancelarBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelarBTN.ForeColor = System.Drawing.SystemColors.Control;
             this.cancelarBTN.Location = new System.Drawing.Point(990, 576);
             this.cancelarBTN.Margin = new System.Windows.Forms.Padding(4);
             this.cancelarBTN.Name = "cancelarBTN";
             this.cancelarBTN.Size = new System.Drawing.Size(156, 41);
             this.cancelarBTN.TabIndex = 12;
             this.cancelarBTN.Text = "Cancelar";
-            this.cancelarBTN.UseVisualStyleBackColor = true;
+            this.cancelarBTN.UseVisualStyleBackColor = false;
             this.cancelarBTN.Click += new System.EventHandler(this.cancelarBTN_Click);
             // 
             // guardarBTN
@@ -93,13 +100,16 @@ namespace GestProv.Presentacion._01_VISTAS
             this.guardarBTN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.guardarBTN.BackColor = System.Drawing.Color.ForestGreen;
+            this.guardarBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guardarBTN.ForeColor = System.Drawing.SystemColors.Control;
             this.guardarBTN.Location = new System.Drawing.Point(532, 576);
             this.guardarBTN.Margin = new System.Windows.Forms.Padding(4);
             this.guardarBTN.Name = "guardarBTN";
             this.guardarBTN.Size = new System.Drawing.Size(156, 41);
             this.guardarBTN.TabIndex = 10;
             this.guardarBTN.Text = "Guardar";
-            this.guardarBTN.UseVisualStyleBackColor = true;
+            this.guardarBTN.UseVisualStyleBackColor = false;
             this.guardarBTN.Click += new System.EventHandler(this.guardarBTN_Click);
             // 
             // label1
@@ -364,9 +374,10 @@ namespace GestProv.Presentacion._01_VISTAS
             this.Controls.Add(this.limpiarBTN);
             this.Controls.Add(this.cancelarBTN);
             this.Controls.Add(this.guardarBTN);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1216, 677);
             this.Name = "CompraVista";
-            this.Text = "CompraVista";
+            this.Text = "Compra";
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comprasList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).EndInit();

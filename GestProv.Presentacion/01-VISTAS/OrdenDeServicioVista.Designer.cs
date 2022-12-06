@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrdenDeServicioVista));
             this.label7 = new System.Windows.Forms.Label();
             this.textFechaRealResol = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -54,104 +55,125 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(39, 232);
+            this.label7.Location = new System.Drawing.Point(52, 286);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.Size = new System.Drawing.Size(62, 17);
             this.label7.TabIndex = 36;
             this.label7.Text = "Tecnico:";
             // 
             // textFechaRealResol
             // 
-            this.textFechaRealResol.Location = new System.Drawing.Point(205, 176);
+            this.textFechaRealResol.Location = new System.Drawing.Point(273, 217);
+            this.textFechaRealResol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textFechaRealResol.Name = "textFechaRealResol";
-            this.textFechaRealResol.Size = new System.Drawing.Size(263, 20);
+            this.textFechaRealResol.Size = new System.Drawing.Size(349, 22);
             this.textFechaRealResol.TabIndex = 28;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 176);
+            this.label5.Location = new System.Drawing.Point(52, 217);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 13);
+            this.label5.Size = new System.Drawing.Size(144, 17);
             this.label5.TabIndex = 34;
             this.label5.Text = "Fecha Real de Resol:";
             // 
             // textFechaEstResol
             // 
-            this.textFechaEstResol.Location = new System.Drawing.Point(205, 125);
+            this.textFechaEstResol.Location = new System.Drawing.Point(273, 154);
+            this.textFechaEstResol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textFechaEstResol.Name = "textFechaEstResol";
-            this.textFechaEstResol.Size = new System.Drawing.Size(263, 20);
+            this.textFechaEstResol.Size = new System.Drawing.Size(349, 22);
             this.textFechaEstResol.TabIndex = 27;
             // 
             // textFechaSolic
             // 
-            this.textFechaSolic.Location = new System.Drawing.Point(205, 78);
+            this.textFechaSolic.Location = new System.Drawing.Point(273, 96);
+            this.textFechaSolic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textFechaSolic.Name = "textFechaSolic";
-            this.textFechaSolic.Size = new System.Drawing.Size(263, 20);
+            this.textFechaSolic.Size = new System.Drawing.Size(349, 22);
             this.textFechaSolic.TabIndex = 26;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 125);
+            this.label3.Location = new System.Drawing.Point(52, 154);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 13);
+            this.label3.Size = new System.Drawing.Size(177, 17);
             this.label3.TabIndex = 33;
             this.label3.Text = "Fecha Estimada de Resol.:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 81);
+            this.label2.Location = new System.Drawing.Point(52, 100);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 13);
+            this.label2.Size = new System.Drawing.Size(109, 17);
             this.label2.TabIndex = 32;
             this.label2.Text = "Fecha de Solic.:";
             // 
             // textDescripcion
             // 
-            this.textDescripcion.Location = new System.Drawing.Point(140, 36);
+            this.textDescripcion.Location = new System.Drawing.Point(187, 44);
+            this.textDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textDescripcion.Name = "textDescripcion";
-            this.textDescripcion.Size = new System.Drawing.Size(328, 20);
+            this.textDescripcion.Size = new System.Drawing.Size(436, 22);
             this.textDescripcion.TabIndex = 25;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 39);
+            this.label1.Location = new System.Drawing.Point(52, 48);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.Size = new System.Drawing.Size(86, 17);
             this.label1.TabIndex = 31;
             this.label1.Text = "Descripción:";
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(121, 333);
+            this.btnLimpiar.BackColor = System.Drawing.Color.Chocolate;
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnLimpiar.Location = new System.Drawing.Point(55, 433);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.Size = new System.Drawing.Size(122, 38);
             this.btnLimpiar.TabIndex = 38;
             this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(413, 333);
+            this.btnCancelar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCancelar.Location = new System.Drawing.Point(577, 433);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(122, 38);
             this.btnCancelar.TabIndex = 39;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(271, 333);
+            this.btnGuardar.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnGuardar.Location = new System.Drawing.Point(316, 433);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(122, 38);
             this.btnGuardar.TabIndex = 37;
             this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // dataGridViewTecnicos
@@ -168,19 +190,22 @@
             this.proveedorDataGridViewTextBoxColumn,
             this.telefonoDataGridViewTextBoxColumn});
             this.dataGridViewTecnicos.DataSource = this.tecnicoBindingSource;
-            this.dataGridViewTecnicos.Location = new System.Drawing.Point(99, 232);
+            this.dataGridViewTecnicos.Location = new System.Drawing.Point(132, 286);
+            this.dataGridViewTecnicos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewTecnicos.MultiSelect = false;
             this.dataGridViewTecnicos.Name = "dataGridViewTecnicos";
             this.dataGridViewTecnicos.ReadOnly = true;
             this.dataGridViewTecnicos.RowHeadersVisible = false;
+            this.dataGridViewTecnicos.RowHeadersWidth = 51;
             this.dataGridViewTecnicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewTecnicos.Size = new System.Drawing.Size(425, 74);
+            this.dataGridViewTecnicos.Size = new System.Drawing.Size(567, 91);
             this.dataGridViewTecnicos.TabIndex = 40;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
             this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -188,6 +213,7 @@
             // 
             this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
             this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
             this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -195,6 +221,7 @@
             // 
             this.proveedorDataGridViewTextBoxColumn.DataPropertyName = "Proveedor";
             this.proveedorDataGridViewTextBoxColumn.HeaderText = "Proveedor";
+            this.proveedorDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.proveedorDataGridViewTextBoxColumn.Name = "proveedorDataGridViewTextBoxColumn";
             this.proveedorDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -202,6 +229,7 @@
             // 
             this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
             this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
             this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -211,9 +239,9 @@
             // 
             // OrdenDeServicioVista
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 407);
+            this.ClientSize = new System.Drawing.Size(735, 501);
             this.Controls.Add(this.dataGridViewTecnicos);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnCancelar);
@@ -227,8 +255,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textDescripcion);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "OrdenDeServicioVista";
-            this.Text = "OrdenDeServicioVista";
+            this.Text = "OrdenDeServicio";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTecnicos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tecnicoBindingSource)).EndInit();
             this.ResumeLayout(false);

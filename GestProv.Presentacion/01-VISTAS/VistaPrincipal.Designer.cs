@@ -30,7 +30,6 @@ namespace GestProv.Presentacion._01_VISTAS
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.seleccionPN = new System.Windows.Forms.Panel();
             this.buttonsTBPN = new System.Windows.Forms.TableLayoutPanel();
             this.seleccionLB = new System.Windows.Forms.Label();
             this.comprasBTN = new System.Windows.Forms.Button();
@@ -42,6 +41,7 @@ namespace GestProv.Presentacion._01_VISTAS
             this.tecnicosBTN = new System.Windows.Forms.Button();
             this.ProveedoresBTN = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.seleccionPN = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.buttonsTBPN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,24 +60,11 @@ namespace GestProv.Presentacion._01_VISTAS
             this.panel1.Size = new System.Drawing.Size(260, 673);
             this.panel1.TabIndex = 0;
             // 
-            // seleccionPN
-            // 
-            this.seleccionPN.AutoSize = true;
-            this.seleccionPN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.seleccionPN.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.seleccionPN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.seleccionPN.Location = new System.Drawing.Point(260, 0);
-            this.seleccionPN.Margin = new System.Windows.Forms.Padding(0);
-            this.seleccionPN.MinimumSize = new System.Drawing.Size(1002, 673);
-            this.seleccionPN.Name = "seleccionPN";
-            this.seleccionPN.Size = new System.Drawing.Size(1002, 673);
-            this.seleccionPN.TabIndex = 3;
-            // 
             // buttonsTBPN
             // 
             this.buttonsTBPN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
             this.buttonsTBPN.ColumnCount = 1;
-            this.buttonsTBPN.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 240F));
+            this.buttonsTBPN.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 260F));
             this.buttonsTBPN.Controls.Add(this.seleccionLB, 0, 1);
             this.buttonsTBPN.Controls.Add(this.comprasBTN, 0, 3);
             this.buttonsTBPN.Controls.Add(this.calificacionesBTN, 0, 15);
@@ -311,6 +298,19 @@ namespace GestProv.Presentacion._01_VISTAS
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            // 
+            // seleccionPN
+            // 
+            this.seleccionPN.AutoSize = true;
+            this.seleccionPN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.seleccionPN.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.seleccionPN.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.seleccionPN.Location = new System.Drawing.Point(260, 0);
+            this.seleccionPN.Margin = new System.Windows.Forms.Padding(0);
+            this.seleccionPN.MinimumSize = new System.Drawing.Size(1002, 673);
+            this.seleccionPN.Name = "seleccionPN";
+            this.seleccionPN.Size = new System.Drawing.Size(1002, 673);
+            this.seleccionPN.TabIndex = 3;
             // 
             // VistaPrincipal
             // 

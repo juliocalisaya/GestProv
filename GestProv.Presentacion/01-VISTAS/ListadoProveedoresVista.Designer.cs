@@ -75,7 +75,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(972, 278);
+            this.dataGridView1.Size = new System.Drawing.Size(972, 410);
             this.dataGridView1.TabIndex = 2;
             // 
             // nombreyApellidoDataGridViewTextBoxColumn
@@ -116,46 +116,58 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(400, 422);
+            this.button1.BackColor = System.Drawing.Color.ForestGreen;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(394, 548);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 68);
             this.button1.TabIndex = 3;
             this.button1.Text = "Nuevo Proveedor";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(596, 422);
+            this.button2.BackColor = System.Drawing.Color.Firebrick;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.Control;
+            this.button2.Location = new System.Drawing.Point(590, 548);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(163, 68);
             this.button2.TabIndex = 4;
             this.button2.Text = "Eliminar Proveedor";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(845, 422);
+            this.button3.BackColor = System.Drawing.Color.DarkOrange;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.Control;
+            this.button3.Location = new System.Drawing.Point(839, 548);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(163, 68);
             this.button3.TabIndex = 5;
             this.button3.Text = "Editar Proveedor";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // buttonSucursales
             // 
-            this.buttonSucursales.Location = new System.Drawing.Point(36, 422);
+            this.buttonSucursales.BackColor = System.Drawing.Color.MidnightBlue;
+            this.buttonSucursales.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSucursales.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonSucursales.Location = new System.Drawing.Point(30, 548);
             this.buttonSucursales.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSucursales.Name = "buttonSucursales";
             this.buttonSucursales.Size = new System.Drawing.Size(133, 68);
             this.buttonSucursales.TabIndex = 6;
             this.buttonSucursales.Text = "Ver Sucursales";
-            this.buttonSucursales.UseVisualStyleBackColor = true;
+            this.buttonSucursales.UseVisualStyleBackColor = false;
             this.buttonSucursales.Click += new System.EventHandler(this.buttonSucursales_Click);
             // 
             // ListadoProveedoresVista
