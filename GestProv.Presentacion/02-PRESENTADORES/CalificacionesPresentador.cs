@@ -51,10 +51,10 @@ namespace GestProv.Presentacion._02_PRESENTADORES
             _compras = new List<Compra>();
             _ordenesDeServicio = new List<OrdenDeServicio>();
             ReiniciarVariables();
-            ObtenerCompras();
+            ObtenerCompras(proveedor);
             _cantidadDeCompras = _compras.Count;
             ContarEntregasConRetraso();
-            ObtenerOrdenesDeServicio();
+            ObtenerOrdenesDeServicio(proveedor);
             _cantidadDeOrdenesDeServicio = _ordenesDeServicio.Count;
             ContarServiciosConRetraso();
 
@@ -86,20 +86,18 @@ namespace GestProv.Presentacion._02_PRESENTADORES
             _Calificacion = 100.0d;
         }
 
-        private void ObtenerCompras()
+        private void ObtenerCompras(Proveedor proveedor)
         {
             DateTime fechaActual = DateTime.Now;
 
             for (int i = 0; i < 12; i++)
             {
                 string busqueda = fechaActual.ToString("MM-yyyy");
-                List<Compra> temporal = _contexto.ObtenerComprasMes(busqueda);
+                List<Compra> temporal = _contexto.ObtenerComprasMes(busqueda).Where(x => x.Proveedor.Equals(proveedor)).ToList();
                 foreach (var item in temporal)
                 {
                     _compras.Add(item);
                 }
-
-
                 fechaActual = fechaActual.AddMonths(-1);
             }
         }
@@ -129,12 +127,12 @@ namespace GestProv.Presentacion._02_PRESENTADORES
 
             if(_cantidadDeCompras > 0)
             {
-                _penalizacionCompras = 40.0d * (_entregasConRetraso / _cantidadDeCompras);
+                _penalizacionCompras = 40.0d * (Convert.ToDouble(_entregasConRetraso) / Convert.ToDouble(_cantidadDeCompras));
             }
 
             if (_cantidadDeOrdenesDeServicio > 0)
             {
-                _penalizacionServicios = 60.0d * (_ordenesConRetraso / _cantidadDeOrdenesDeServicio);
+                _penalizacionServicios = 60.0d * (Convert.ToDouble(_ordenesConRetraso) / Convert.ToDouble(_cantidadDeOrdenesDeServicio));
             }
             
 
@@ -142,20 +140,18 @@ namespace GestProv.Presentacion._02_PRESENTADORES
             return _Calificacion - _penalizacionCompras - _penalizacionServicios ;
         }
 
-        private void ObtenerOrdenesDeServicio()
+        private void ObtenerOrdenesDeServicio(Proveedor proveedor)
         {
             DateTime fechaActual = DateTime.Now;
 
             for (int i = 0; i < 12; i++)
             {
                 string busqueda = fechaActual.ToString("MM-yyyy");
-                List<OrdenDeServicio> temporal = _contexto.ObtenerOrdenesMes(busqueda);
+                List<OrdenDeServicio> temporal = _contexto.ObtenerOrdenesMes(busqueda).Where(x => x.Tecnico.Proveedor.Equals(proveedor)).ToList();
                 foreach (var item in temporal)
                 {
                     _ordenesDeServicio.Add(item);
                 }
-
-
                 fechaActual = fechaActual.AddMonths(-1);
             }
         }
@@ -171,7 +167,7 @@ namespace GestProv.Presentacion._02_PRESENTADORES
 
                     if (fechaReal.CompareTo(fechaEsperada) > 0)
                     {
-                        _entregasConRetraso++;
+                        _ordenesConRetraso++;
                     }
                 }                
 
